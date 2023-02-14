@@ -7,6 +7,7 @@ import { StatisticPage } from 'pages/StatisticPage/StatisticPage';
 import { CurrencyPage } from 'pages/CurrencyPage/CurrencyPage';
 import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
 import { LoginPage } from 'pages/LoginPage/LoginPage';
+import { HomePage } from 'pages/HomePage/HomePage';
 
 export const App = () => {
   return (
@@ -14,7 +15,7 @@ export const App = () => {
       <Route path={routes.LOGIN} element={<LoginPage />} />
       <Route path={routes.REGISTER} element={<RegisterPage />} />
       <Route path={routes.HOME} element={<DashboardPage />}>
-        <Route index element={<DashboardPage />} />
+        <Route index element={<HomePage />} />
         <Route path={routes.DIAGRAM} element={<StatisticPage />} />
         <Route path={routes.CURRENCY} element={<CurrencyPage />} />
         <Route path="*" element={<Navigate to={routes.HOME} />} />
