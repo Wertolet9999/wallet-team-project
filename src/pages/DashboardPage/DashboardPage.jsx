@@ -5,10 +5,10 @@ import React from 'react';
 
 export const DashboardPage = () => {
   return (
-    <>
+    <div>
       <HomeTab />
       <TransactionsList />
       <ButtonAddTransactions />
-    </>
+    </div>
   );
 };

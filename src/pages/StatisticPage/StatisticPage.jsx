@@ -5,10 +5,10 @@ import React from 'react';
 
 export const StatisticPage = () => {
   return (
-    <>
+    <div>
       <Chart />
       <Table />
       <DiagramTab />
-    </>
+    </div>
   );
 };
