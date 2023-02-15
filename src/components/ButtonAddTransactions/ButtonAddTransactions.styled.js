@@ -5,7 +5,6 @@ export const Icon = styled(AiOutlinePlus)`
   width: 20px;
   height: 20px;
   fill: #fff;
-  transition: all 0.3s ease-in-out;
 `;
 
 export const StyledBtn = styled.button`
