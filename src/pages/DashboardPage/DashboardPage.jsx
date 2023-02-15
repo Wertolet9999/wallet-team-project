@@ -1,17 +1,14 @@
-import { Outlet } from 'react-router-dom';
-import { Header } from 'components/Header/Header';
-import { Section } from './DashboardPage.styled';
-import { Container } from 'service/baseStyle';
+import { ButtonAddTransactions } from 'components/ButtonAddTransactions/ButtonAddTransactions';
+import { HomeTab } from 'components/HomeTab/HomeTab';
+import { TransactionsList } from 'components/TransactionsList/TransactionsList';
+import React from 'react';
 
 export const DashboardPage = () => {
   return (
     <>
-      <Header />
-      <Container>
-        <Section>
-          <Outlet />
-        </Section>
-      </Container>
+      <HomeTab />
+      <TransactionsList />
+      <ButtonAddTransactions />
     </>
   );
 };
