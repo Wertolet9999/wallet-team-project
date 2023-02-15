@@ -8,14 +8,16 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
+import { transactionsReducer } from './transactions/transactionSlice';
+import { statisticReducer } from './transactionStatistic/statisticSlice';
 
 export const store = configureStore({
   reducer: {
     // auth:,
-    // transactions: ,
+    transactions: transactionsReducer,
     // categories:,
     // monoBank:,
-    // Statistic:,
+    statistic: statisticReducer,
   },
 
   middleware: getDefaultMiddleware =>
