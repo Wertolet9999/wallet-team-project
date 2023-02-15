@@ -1,5 +1,6 @@
 import React from 'react';
+import { ModalAddTransactionTitle } from './ModalAddTransaction.styled';
 
 export const ModalAddTransaction = () => {
-  return <div>ModalAddTransaction</div>;
+  return <ModalAddTransactionTitle>Add transaction</ModalAddTransactionTitle>;
 };

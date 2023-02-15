@@ -1,5 +1,6 @@
+import { ButtonAddTransactions } from 'components/ButtonAddTransactions/ButtonAddTransactions';
 import React from 'react';
 
 export const HomePage = () => {
-  return <div>HomePage</div>;
+  return <ButtonAddTransactions>add transaction</ButtonAddTransactions>;
 };
