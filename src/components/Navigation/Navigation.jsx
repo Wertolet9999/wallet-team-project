@@ -6,19 +6,19 @@ export const Navigation = () => {
     <StyledNav>
       <StyledUl>
         <li>
-          <StyledNavLink to={routes.LOGIN} />
+          <StyledNavLink to={routes.LOGIN}>LOGIN</StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to={routes.REGISTER} />
+          <StyledNavLink to={routes.REGISTER}>REGISTER</StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to={routes.HOME} />
+          <StyledNavLink to={routes.HOME}>HOME</StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to={routes.DIAGRAM} />
+          <StyledNavLink to={routes.DIAGRAM}>DIAGRAM</StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to={routes.CURRENCY} />
+          <StyledNavLink to={routes.CURRENCY}>CURRENCY</StyledNavLink>
         </li>
       </StyledUl>
     </StyledNav>
