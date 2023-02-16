@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import loginBgImgTab from '../../img/background/loginBgImgTab';
+import loginBgImgTab from '../../img/background/loginBgImgTab.png';
 import loginBgImgTabLarge from '../../img/background/loginBgImgTab@2x.png';
 import loginBgImgDesk from '../../img/background/loginBgImgDesk.png';
 import loginBgImgDeskLarge from '../../img/background/loginBgImgDesk@2x.png';
