@@ -1,7 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
-
-export const baseStyle = createGlobalStyle`
+export const BaseStyle = createGlobalStyle`
 
 *,
 ::after,
@@ -79,3 +78,13 @@ export const Container = styled.div`
   }
 `;
 
+export const toastStyled = {
+  position: 'top-right',
+  autoClose: 5000,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  theme: 'colored',
+};
