@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const List = styled('ul')`
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 8px;
   margin: 0;
   padding: 0;
@@ -21,7 +23,6 @@ export const SpanDead = styled('span')`
   display: flex;
   align-items: center;
 
-  font-family: 'Exo,  sans-serif';
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;

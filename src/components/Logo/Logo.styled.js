@@ -8,7 +8,7 @@ export const LogoLink = styled(Link)`
   text-decoration: none;
   padding: 0;
   margin: 0;
-  font-family: familyPoppins;
+  // font-family: Poppins;
   font-weight: 700};
   font-size: 18px;
   line-height: 1.5;
