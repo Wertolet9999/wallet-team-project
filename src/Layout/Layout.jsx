@@ -12,14 +12,14 @@ export const Layout = () => {
       <Header />
       {isMobile ? (
         <>
-          <WrapperDiv>
-            <SideBar />
-            <Container>
+          {/* <WrapperDiv> */}
+          <SideBar />
+          {/* <Container>
               <Section>
                 <Outlet />
               </Section>
             </Container>
-          </WrapperDiv>
+          </WrapperDiv> */}
         </>
       ) : (
         <>

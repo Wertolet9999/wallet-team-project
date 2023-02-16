@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
-  border: solid 1px transparent;
   color: inherit;
   @media screen and (min-width: 768px) {
     display: flex;
@@ -51,9 +50,10 @@ export const StyledNavLink = styled(NavLink)`
 export const StyledUl = styled.ul`
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  gap: 35px;
-  list-style: none;
+  justify-content: space-between;
+      align-items: center;
+  margin:auto;
+  max-width: 480px;
 
   @media screen and (min-width: 768px) {
     flex-direction: column;
@@ -62,12 +62,4 @@ export const StyledUl = styled.ul`
   }
 `;
 
-export const StyledNav = styled.nav`
-  @media screen and (max-width: 767px) {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 5;
-    top: 72px;
-  }
-`;
+
