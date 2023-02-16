@@ -8,6 +8,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
+import { categoriesReducer } from './categories/categoriesSlice';
 import { transactionsReducer } from './transactions/transactionSlice';
 import { statisticReducer } from './transactionStatistic/statisticSlice';
 
@@ -15,7 +16,7 @@ export const store = configureStore({
   reducer: {
     // auth:,
     transactions: transactionsReducer,
-    // categories:,
+    categories: categoriesReducer,
     // monoBank:,
     statistic: statisticReducer,
   },

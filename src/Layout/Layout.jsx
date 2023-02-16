@@ -1,12 +1,13 @@
 import { Outlet } from 'react-router-dom';
-import { Header } from 'components/Header/Header';
-import { Section, WrapperDiv } from './Layout.styled';
+import { WrapperDiv } from './Layout.styled';
 import { Container } from 'stylesheet/baseStyle';
 import { SideBar } from 'components/SideBar/SideBar';
 import { useMedia } from 'react-use';
+import { Header } from 'components/Header/Header';
 
 export const Layout = () => {
   const isMobile = useMedia('(max-width: 767px)');
+
   return (
     <>
       <Header />
@@ -22,12 +23,10 @@ export const Layout = () => {
       ) : (
         <>
           <Container>
-            <Section>
-              <WrapperDiv>
-                <SideBar />
-                <Outlet />
-              </WrapperDiv>
-            </Section>
+            <WrapperDiv>
+              <SideBar />
+              <Outlet />
+            </WrapperDiv>
           </Container>
         </>
       )}

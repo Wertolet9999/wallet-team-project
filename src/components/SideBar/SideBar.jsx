@@ -3,13 +3,16 @@ import { Currency } from 'components/Currency/Currency';
 import { Navigation } from 'components/Navigation/Navigation';
 import { useMedia } from 'react-use';
 import { Container } from 'stylesheet/baseStyle';
-import { Wrap } from './SideBar.styled';
+import { FlexWrap, Wrap } from './SideBar.styled';
 
 export const SideBar = () => {
   const isMobile = useMedia('(max-width: 767px)');
+  const isTablet = useMedia('(min-width: 768px) and (max-width: 1279px)');
+  const isMac = useMedia('(min-width: 1280px)');
+
   return (
     <>
-      {isMobile ? (
+      {isMobile && (
         <>
           <Container>
             <Wrap>
@@ -17,15 +20,23 @@ export const SideBar = () => {
             </Wrap>
           </Container>
         </>
-      ) : (
+      )}
+      {isTablet && (
         <>
-          <Container>
-            <Wrap>
-              <Navigation />
-              <Balance />
-              <Currency />
-            </Wrap>
-          </Container>
+          <FlexWrap>
+            <Navigation />
+            <Currency />
+          </FlexWrap>
+          <Balance />
+        </>
+      )}
+      {isMac && (
+        <>
+          <FlexWrap>
+            <Navigation />
+            <Balance />
+            <Currency />
+          </FlexWrap>
         </>
       )}
     </>

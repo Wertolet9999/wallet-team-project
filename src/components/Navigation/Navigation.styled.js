@@ -54,12 +54,20 @@ export const StyledUl = styled.ul`
       align-items: center;
   margin:auto;
   max-width: 480px;
+    
+
+     @media screen and (max-width: 768px) {
+margin-top: 72px;
+  }
 
   @media screen and (min-width: 768px) {
     flex-direction: column;
     justify-content: start;
     gap: 12px;
+        margin: unset;
+         align-items: flex-start;
   }
+  
 `;
 
 
