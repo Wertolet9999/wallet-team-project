@@ -25,16 +25,13 @@ import { selectCategories } from 'redux/categories/categoriesSelectors';
 import { useDispatch, useSelector } from 'react-redux';
 
 export const ModalAddTransaction = ({ onClose }) => {
-  // const categories = useSelector(selectCategories);
-  const categories = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
-  ];
-  const [transactionDate] = useState(new Date());
+  const categories = useSelector(selectCategories);
+  d;
+  const [transactionDate, setTransactionDate] = useState(new Date());
   const [categoryId, setCategoryId] = useState('');
   const isMobile = useMedia('(max-width: 767px)');
-  // const dispatch = useDispatch();
+
+  const dispatch = useDispatch();
 
   const changeCategory = categoryId => {
     setCategoryId(categoryId.value);
