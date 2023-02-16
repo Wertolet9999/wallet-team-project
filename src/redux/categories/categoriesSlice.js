@@ -15,12 +15,13 @@ const categoriesSlice = createSlice({
     },
     [getCategories.fulfilled]: (state, { payload }) => {
       state.items = payload;
-      state.error = null;
+      state.isLoading = false;
     },
     [getCategories.rejected]: (state, { payload }) => {
-      state.isLoading = false;
       state.error = payload;
+      state.isLoading = false;
     },
   },
 });
+
 export const categoriesReducer = categoriesSlice.reducer;
