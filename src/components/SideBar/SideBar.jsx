@@ -19,8 +19,13 @@ export const SideBar = () => {
         </>
       ) : (
         <>
-          <Balance />
-          <Currency />
+          <Container>
+            <Wrap>
+              <Navigation />
+              <Balance />
+              <Currency />
+            </Wrap>
+          </Container>
         </>
       )}
     </>

@@ -4,6 +4,7 @@ import { useMedia } from 'react-use';
 import { IoMdHome } from 'react-icons/io';
 import { MdTimeline } from 'react-icons/md';
 import { FaDollarSign } from 'react-icons/fa';
+import { Balance } from 'components/Balance/Balance';
 
 export const Navigation = () => {
   const isMobile = useMedia('(max-width: 767px)');
