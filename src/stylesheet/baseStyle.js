@@ -1,6 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
-
 export const BaseStyle = createGlobalStyle`
 
 *,
@@ -25,6 +24,7 @@ body {
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
     font-size: 16px;
   color: #000000;
+  background:#E7EAF2;
 }
 
 ul{
@@ -78,4 +78,3 @@ export const Container = styled.div`
     width: 1280px;
   }
 `;
-
