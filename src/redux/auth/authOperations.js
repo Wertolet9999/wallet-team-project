@@ -1,31 +1,26 @@
-import axios from 'axios';
+
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { baseAPI, token } from 'API/api';
 import { toast } from 'react-toastify';
+import { toastStyled } from 'stylesheet/baseStyle';
 
+export const fetchCurrentUser = createAsyncThunk(
+  'auth/refresh',
+  async (_, { rejectWithValue, getState }) => {
+    const currentToken = getState().auth.token;
+    if (currentToken) {
+      token.set(currentToken);
+      try {
+        const { data } = await baseAPI.get('/users/current');
+        return data;
+      } catch (error) {
+        return rejectWithValue(error.message);
+      }
+    }
+    return rejectWithValue();
+  }
+);
 
-export const baseAPI = axios.create({
-  baseURL: 'https://wallet.goit.ua/api',
-});
-
-const toastStyled = {
-  position: 'top-right',
-  autoClose: 5000,
-  hideProgressBar: false,
-  closeOnClick: true,
-  pauseOnHover: true,
-  draggable: true,
-  progress: undefined,
-  theme: 'colored',
-};
-
-const token = {
-  set(token) {
-    baseAPI.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-  },
-  unset() {
-    baseAPI.defaults.headers.common['Authorization'] = '';
-  },
-};
 
 export const register = createAsyncThunk(
   'auth/register',
@@ -36,9 +31,10 @@ export const register = createAsyncThunk(
       return data;
     } catch (error) {
       if (error.response.status === 409) {
-        toast.error('User with such email already exists!', toastStyled);
+
+        toast.error('🆘 User with such email already exists!', toastStyled);
       } else {
-        toast.error('Validation error.', toastStyled);
+        toast.error('🆘 Validation error.', toastStyled);
       }
 
       return rejectWithValue(error.message);
@@ -55,11 +51,11 @@ export const login = createAsyncThunk(
       return data;
     } catch (error) {
       if (error.response.status === 404) {
-        toast.error('User with such email not found!', toastStyled);
+        toast.error('🆘 User with such email not found!', toastStyled);
       } else if (error.response.status === 403) {
-        toast.error('Provided password is incorrect!', toastStyled);
+        toast.error('🆘 Provided password is incorrect!', toastStyled);
       } else {
-        toast.error('Validation error.', toastStyled);
+        toast.error('🆘 Validation error.', toastStyled);
       }
 
       return rejectWithValue(error.message);
@@ -79,19 +75,3 @@ export const logout = createAsyncThunk(
   }
 );
 
-export const fetchCurrentUser = createAsyncThunk(
-  'auth/refresh',
-  async (_, { rejectWithValue, getState }) => {
-    const tokenCurrent = getState().auth.token;
-    if (!tokenCurrent) {
-      return rejectWithValue();
-    }
-    token.set(tokenCurrent);
-    try {
-      const { data } = await baseAPI.get('/users/current');
-      return data;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  }
-);
