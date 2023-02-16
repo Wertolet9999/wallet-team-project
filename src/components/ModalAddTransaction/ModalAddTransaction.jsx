@@ -1,5 +1,4 @@
 import { useFormik } from 'formik';
-import * as yup from 'yup';
 import React, { useState } from 'react';
 import {
   Amount,
@@ -24,7 +23,7 @@ export const ModalAddTransaction = ({ onClose }) => {
     { value: 'vanilla', label: 'Vanilla' },
   ];
 
-  const [transactionDate, setTransactionDate] = useState(new Date());
+  const [transactionDate] = useState(new Date());
   const [categoryId, setCategoryId] = useState('');
   const isMobile = useMedia('(max-width: 767px)');
   const changeCategory = categoryId => {
