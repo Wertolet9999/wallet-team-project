@@ -1,3 +1,4 @@
+
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { baseAPI, token } from 'API/api';
 import { toast } from 'react-toastify';
@@ -20,6 +21,7 @@ export const fetchCurrentUser = createAsyncThunk(
   }
 );
 
+
 export const register = createAsyncThunk(
   'auth/register',
   async (userData, { rejectWithValue }) => {
@@ -29,6 +31,7 @@ export const register = createAsyncThunk(
       return data;
     } catch (error) {
       if (error.response.status === 409) {
+
         toast.error('🆘 User with such email already exists!', toastStyled);
       } else {
         toast.error('🆘 Validation error.', toastStyled);
@@ -71,3 +74,4 @@ export const logout = createAsyncThunk(
     }
   }
 );
+
