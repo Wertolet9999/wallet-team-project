@@ -7,8 +7,17 @@ import {
   Table,
   Wrapper,
 } from './Currency.styled';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { getCurrency } from 'redux/monoBank/monoBankOperations';
 
 export const Currency = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCurrency());
+  }, [dispatch]);
+
   return (
     <>
       <Wrapper>
