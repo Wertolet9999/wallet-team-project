@@ -1,3 +1,4 @@
+
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { baseAPI, token } from 'API/api';
 import { toast } from 'react-toastify';
@@ -20,6 +21,7 @@ export const fetchCurrentUser = createAsyncThunk(
   }
 );
 
+
 export const register = createAsyncThunk(
   'auth/register',
   async (userData, { rejectWithValue }) => {
@@ -29,9 +31,10 @@ export const register = createAsyncThunk(
       return data;
     } catch (error) {
       if (error.response.status === 409) {
-        toast.error('User with such email already exists!', toastStyled);
+
+        toast.error('🆘 User with such email already exists!', toastStyled);
       } else {
-        toast.error('Validation error.', toastStyled);
+        toast.error('🆘 Validation error.', toastStyled);
       }
 
       return rejectWithValue(error.message);
@@ -48,11 +51,11 @@ export const login = createAsyncThunk(
       return data;
     } catch (error) {
       if (error.response.status === 404) {
-        toast.error('User with such email not found!', toastStyled);
+        toast.error('🆘 User with such email not found!', toastStyled);
       } else if (error.response.status === 403) {
-        toast.error('Provided password is incorrect!', toastStyled);
+        toast.error('🆘 Provided password is incorrect!', toastStyled);
       } else {
-        toast.error('Validation error.', toastStyled);
+        toast.error('🆘 Validation error.', toastStyled);
       }
 
       return rejectWithValue(error.message);
@@ -63,11 +66,12 @@ export const login = createAsyncThunk(
 export const logout = createAsyncThunk(
   'auth/logout',
   async (_, { rejectWithValue }) => {
-  try {
+    try {
       await baseAPI.delete('/auth/sign-out');
-      token.unset()
-  } catch (error) {
-    return rejectWithValue(error.message)
-  }
+      token.unset();
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
   }
 );
+
