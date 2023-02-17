@@ -8,6 +8,7 @@ import { CurrencyPage } from 'pages/CurrencyPage/CurrencyPage';
 import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
 import { LoginPage } from 'pages/LoginPage/LoginPage';
 import { Layout } from 'Layout/Layout';
+import { Patron } from './Patron/Patron';
 
 export const App = () => {
   return (
