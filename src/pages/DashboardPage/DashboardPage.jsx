@@ -1,10 +1,9 @@
 import { Balance } from 'components/Balance/Balance';
 import { ButtonAddTransactions } from 'components/ButtonAddTransactions/ButtonAddTransactions';
 import Dashpord from 'components/dashbord/Dashpord';
-import { HomeTab } from 'components/HomeTab/HomeTab';
 import { ModalAddTransaction } from 'components/ModalAddTransaction/ModalAddTransaction';
 import ModalWindowOverlay from 'components/ModalWindowOverlay/ModalWindowOverlay';
-import { TransactionsList } from 'components/TransactionsList/TransactionsList';
+
 import React, { useState } from 'react';
 import { useMedia } from 'react-use';
 
