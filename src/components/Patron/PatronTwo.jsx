@@ -1,11 +1,11 @@
 import React from 'react';
-import s from '../Patron/PatronTwo.module.css';
+import s from './PatronTwo.module.css';
 
 export const PatronTwo = () => {
   return (
     <div>
       <div className={s.dog}>
-        <div className="dog-body">
+        <div className={s.dogbody}>
           <div className="dog-tail">
             <div className="dog-tail">
               <div className="dog-tail">
