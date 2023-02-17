@@ -9,9 +9,15 @@
 
 @font-face {
   font-family: Circe;
-  src: url('/src/assets/fonts/circe/circe_bold.ttf') format('ttf');
+  src: url('/src/assets/fonts/circe/circe-bold.ttf') format('ttf');
 }
+
 @font-face {
   font-family: Circe;
   src: url('/src/assets/fonts/circe/circe_regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: Circe;
+  src: url('/src/assets/fonts/circe/circe-extrabold.ttf') format('ttf');
 }

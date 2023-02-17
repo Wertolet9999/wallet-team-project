@@ -1,4 +1,3 @@
-export const selectTolen = state => state.auth.token;
 export const selectToken = state => state.auth.token;
 export const selectName = state => state.auth.user.username;
 export const selectEmail = state => state.auth.user.email;
