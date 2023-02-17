@@ -1,31 +1,91 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
-
-import { DashboardPage } from 'pages/DashboardPage/DashboardPage';
-
+// import { DashboardPage } from 'pages/DashboardPage/DashboardPage';
 import { routes } from 'service/routes';
-import { StatisticPage } from 'pages/StatisticPage/StatisticPage';
-import { CurrencyPage } from 'pages/CurrencyPage/CurrencyPage';
-import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
-import { LoginPage } from 'pages/LoginPage/LoginPage';
+// import { StatisticPage } from 'pages/StatisticPage/StatisticPage';
+// import { CurrencyPage } from 'pages/CurrencyPage/CurrencyPage';
+// import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
+// import { LoginPage } from 'pages/LoginPage/LoginPage';
 import { Layout } from 'Layout/Layout';
+import { PrivateRoute } from 'service/PrivatRoutes';
+import { PublicRoute } from 'service/PublicRoutes';
+import { lazy } from 'react';
+
+const DashboardPage = lazy(() =>
+  import('../pages/DashboardPage/DashboardPage').then(module => ({
+    default: module.DashboardPage,
+  }))
+);
+
+const StatisticPage = lazy(() =>
+  import('../pages/StatisticPage/StatisticPage').then(module => ({
+    default: module.StatisticPage,
+  }))
+);
+
+const CurrencyPage = lazy(() =>
+  import('../pages/CurrencyPage/CurrencyPage').then(module => ({
+    default: module.CurrencyPage,
+  }))
+);
+
+const RegisterPage = lazy(() =>
+  import('../pages/RegisterPage/RegisterPage').then(module => ({
+    default: module.RegisterPage,
+  }))
+);
+
+const LoginPage = lazy(() =>
+  import('../pages/LoginPage/LoginPage').then(module => ({
+    default: module.LoginPage,
+  }))
+);
 
 export const App = () => {
   return (
     <Routes>
-      <Route path={routes.LOGIN} element={<LoginPage />} />
-      <Route path={routes.REGISTER} element={<RegisterPage />} />
+      <Route
+        path={routes.LOGIN}
+        element={
+          <PublicRoute restricted>
+            <LoginPage />
+          </PublicRoute>
+        }
+      />
+      <Route
+        path={routes.REGISTER}
+        element={
+          <PublicRoute restricted>
+            <RegisterPage />
+          </PublicRoute>
+        }
+      />
       <Route path={routes.HOME} element={<Layout />}>
-        <Route index element={<DashboardPage />} />
-        <Route path={routes.DIAGRAM} element={<StatisticPage />} />
-        <Route path={routes.CURRENCY} element={<CurrencyPage />} />
+        <Route
+          index
+          element={
+            <PrivateRoute>
+              <DashboardPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path={routes.DIAGRAM}
+          element={
+            <PrivateRoute>
+              <StatisticPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path={routes.CURRENCY}
+          element={
+            <PrivateRoute>
+              <CurrencyPage />
+            </PrivateRoute>
+          }
+        />
         <Route path="*" element={<Navigate to={routes.HOME} />} />
       </Route>
     </Routes>
   );
 };
-//   HOME: '/', //dashboardPage
-//   REGISTER: '/register',
-//   LOGIN: '/login',
-//   DIAGRAM: '/diagram', //SummeryPage
-//   CURRENCY: '/currency', //
-// };
