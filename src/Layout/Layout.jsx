@@ -4,6 +4,8 @@ import { Container } from 'stylesheet/baseStyle';
 import { SideBar } from 'components/SideBar/SideBar';
 import { useMedia } from 'react-use';
 import { Header } from 'components/Header/Header';
+import { Suspense } from 'react';
+import { Loader } from 'components/Loader/Loader';
 
 export const Layout = () => {
   const isMobile = useMedia('(max-width: 767px)');
@@ -16,7 +18,9 @@ export const Layout = () => {
           <WrapperDiv>
             <SideBar />
             <Container>
-              <Outlet />
+              <Suspense fallback={<Loader />}>
+                <Outlet />
+              </Suspense>
             </Container>
           </WrapperDiv>
         </>
@@ -25,7 +29,9 @@ export const Layout = () => {
           <Container>
             <WrapperDiv>
               <SideBar />
-              <Outlet />
+              <Suspense fallback={<Loader />}>
+                <Outlet />
+              </Suspense>
             </WrapperDiv>
           </Container>
         </>

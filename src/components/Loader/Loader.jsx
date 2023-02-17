@@ -1,5 +1,19 @@
 import React from 'react';
+import { CirclesWithBar } from 'react-loader-spinner';
 
 export const Loader = () => {
-  return <div>Loader</div>;
+  return (
+    <CirclesWithBar
+      height="100"
+      width="100"
+      color="#2864a1"
+      wrapperStyle={{}}
+      wrapperClass=""
+      visible={true}
+      outerCircleColor=""
+      innerCircleColor=""
+      barColor=""
+      ariaLabel="circles-with-bar-loading"
+    />
+  );
 };
