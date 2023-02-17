@@ -4,10 +4,10 @@ import { baseRequestMono } from 'API/api';
 export const getCurrency = createAsyncThunk(
   'monoBank/getCurrency',
   async (_, { rejectWithValue, getState }) => {
-    const dataMono = getState().bank.date;
-    const currency = getState().bank.currency;
+    const dataMono = getState().monoBank.date
+    const currency = getState().monoBank.currency;
 
-    if (dataMono && dataMono > Date.now()) {
+    if (dataMono > (Date.now() + 1000 * 60 * 60)) {
       return {
         currency,
         date: dataMono,
@@ -15,11 +15,7 @@ export const getCurrency = createAsyncThunk(
     }
     try {
       const { data } = await baseRequestMono.get('bank/currency');
-      const result = {
-        currency: data,
-        data: Date.now() + 1000 * 60 * 60,
-      };
-      return result;
+      return data;
     } catch (error) {
       return rejectWithValue(error.message);
     }
