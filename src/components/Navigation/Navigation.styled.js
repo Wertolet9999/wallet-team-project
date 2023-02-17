@@ -65,6 +65,7 @@ margin-top: 72px;
     justify-content: start;
     gap: 12px;
         margin: unset;
+        margin-bottom:28px;
          align-items: flex-start;
   }
   
