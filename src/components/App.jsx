@@ -1,10 +1,5 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
-// import { DashboardPage } from 'pages/DashboardPage/DashboardPage';
 import { routes } from 'service/routes';
-// import { StatisticPage } from 'pages/StatisticPage/StatisticPage';
-// import { CurrencyPage } from 'pages/CurrencyPage/CurrencyPage';
-// import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
-// import { LoginPage } from 'pages/LoginPage/LoginPage';
 import { Layout } from 'Layout/Layout';
 import { PrivateRoute } from 'service/PrivatRoutes';
 import { PublicRoute } from 'service/PublicRoutes';
