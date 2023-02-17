@@ -3,8 +3,9 @@ import { Tabel } from 'components/Table/Table';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectBalance } from 'redux/transactions/transactionSelectors';
+
 import { getStatistic } from 'redux/transactionStatistic/statisticOperations';
-import { selectError, selectIsLoadingStatistic, selectStatistic } from 'redux/transactionStatistic/statisticSelectors';
+import {selectError, selectIsLoadingStatistic, selectStatistic} from 'redux/transactionStatistic/statisticSelectors';
 import { ChartBox, Box, Title, Wrapper } from './Statistic.styled';
 
 export const Statistic = () => {
