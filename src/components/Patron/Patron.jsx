@@ -41,6 +41,7 @@ export const Patron = () => {
 
         <div className={s.ball}></div>
       </div>
+      <p>Патрон чекає на твій вибір 🐶</p>
     </div>
   );
 };
