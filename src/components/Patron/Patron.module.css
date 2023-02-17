@@ -1,10 +1,20 @@
 .ball {
-  width: 32px;
-  height: 32px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   margin-top: 4rem;
+  margin-bottom: 10px;
   z-index: 0;
 }
+
+@media screen and (min-width: 768px) {
+  .ball {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 20px;
+  }
+}
+
 .ball:after {
   content: '';
   position: absolute;
@@ -89,10 +99,18 @@
 }
 
 .dog {
-  width: 100px;
-  height: 100px;
+  width: 85px;
+  height: 85px;
   z-index: 1;
 }
+
+@media screen and (min-width: 768px) {
+  .dog {
+    width: 100px;
+    height: 100px;
+  }
+}
+
 .dog:before {
   content: '';
   display: block;
@@ -107,12 +125,12 @@
   position: absolute;
 }
 
-.dog-body {
+.dogBody {
   top: -50%;
   -webkit-animation: dog-body 200ms ease-in-out infinite alternate;
   animation: dog-body 200ms ease-in-out infinite alternate;
 }
-.dog-body:before {
+.dogBody:before {
   content: '';
   position: absolute;
   bottom: 90%;
@@ -172,7 +190,7 @@
   }
 }
 
-.dog-head {
+.dogHead {
   -webkit-animation: dog-head 1800ms cubic-bezier(0.11, 0.79, 0, 0.99) infinite;
   animation: dog-head 1800ms cubic-bezier(0.11, 0.79, 0, 0.99) infinite;
 }
@@ -201,7 +219,7 @@
   }
 }
 
-.dog-torso {
+.dogTorso {
   top: -20%;
   animation: dog-torso 200ms ease-in-out infinite alternate-reverse;
 }
@@ -222,17 +240,17 @@
   }
 }
 
-.dog-eyes {
+.dogEyes {
   width: 60%;
   top: 55%;
   left: 20%;
   z-index: 1;
 }
-.dog-eyes:before {
+.dogEyes:before {
   content: '';
   display: block;
-  height: 40px;
-  width: 40px;
+  height: 25px;
+  width: 25px;
   border-radius: 40px;
   position: absolute;
   background: orange;
@@ -246,7 +264,14 @@
   transform: rotate(-45deg);
 }
 
-.dog-eye {
+@media screen and (min-width: 768px) {
+  .dogEyes:before {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.dogEye {
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -283,14 +308,14 @@
     opacity: 0;
   }
 }
-.dog-eye:first-child {
+.dogEye:first-child {
   left: 0;
 }
-.dog-eye:last-child {
+.dogEye:last-child {
   right: 0;
 }
 
-.dog-muzzle {
+.dogMuzzle {
   width: 60%;
   left: 20%;
   height: 50%;
@@ -299,20 +324,20 @@
   background: white;
   bottom: -15%;
 }
-.dog-muzzle:before,
-.dog-muzzle:after {
+.dogMuzzle:before,
+.dogMuzzle:after {
   content: '';
   display: block;
   position: absolute;
 }
-.dog-muzzle:before {
+.dogMuzzle:before {
   width: 6px;
   height: 20px;
   bottom: 0;
   left: calc(50% - 3px);
   background: #eaebec;
 }
-.dog-muzzle:after {
+.dogMuzzle:after {
   background: black;
   width: 20px;
   height: 15px;
@@ -324,7 +349,7 @@
   border-top-right-radius: 50% 40%;
 }
 
-.dog-tongue {
+.dogTongue {
   width: 40px;
   height: 100%;
   left: calc(50% - 20px);
@@ -367,7 +392,7 @@
     transform: rotate(-20deg);
   }
 }
-.dog-tongue:before {
+.dogTongue:before {
   content: '';
   position: absolute;
   display: block;
@@ -395,7 +420,7 @@
   }
 }
 
-.dog-ears {
+.dogEars {
   width: 40%;
   top: 25%;
   left: 30%;
@@ -447,7 +472,7 @@
   }
 }
 
-.dog-ear {
+.dogEar {
   bottom: -10px;
   height: 50px;
   width: 50px;
@@ -463,7 +488,7 @@
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
-.dog-ear:first-child {
+.dogEar:first-child {
   border-bottom-left-radius: 80%;
   border-top-right-radius: 80%;
   right: 100%;
@@ -471,7 +496,7 @@
   transform-origin: right bottom;
   transform: rotate(10deg);
 }
-.dog-ear:last-child {
+.dogEar:last-child {
   border-top-left-radius: 80%;
   border-bottom-right-radius: 80%;
   left: 100%;
@@ -480,7 +505,7 @@
   transform: rotate(-10deg);
 }
 
-.dog-tail {
+.dogTail {
   width: 22px;
   height: 24.2px;
   background: white;
@@ -489,7 +514,7 @@
   left: calc(50% - 11px);
   transform-origin: center bottom;
 }
-.dog-tail .dog-tail {
+.dogTail .dog-tail {
   -webkit-animation: dog-tail-segment 200ms ease-in-out infinite alternate;
   animation: dog-tail-segment 200ms ease-in-out infinite alternate;
 }
@@ -510,7 +535,7 @@
   }
 }
 
-.dog-body > .dog-tail {
+.dogBody > .dog-tail {
   bottom: 90%;
   -webkit-animation: dog-tail 200ms ease-in-out infinite alternate;
   animation: dog-tail 200ms ease-in-out infinite alternate;
@@ -532,9 +557,9 @@
   }
 }
 
-.dog-body,
-.dog-torso,
-.dog-head {
+.dogBody,
+.dogTorso,
+.dogHead {
   border-radius: 50%;
   background: white;
   position: absolute;
@@ -542,30 +567,49 @@
   width: 100%;
 }
 
-.dog-body,
-.dog-torso {
+.dogBody,
+.dogTorso {
   box-shadow: inset 0 -15px 0 0 #eaebec;
-}
-
-/* body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-html,
-body {
-  background: #ffe16e;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
   position: relative;
-} */
+}
+.wrapper {
+  width: 270px;
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #afc7ff55;
+  margin: 0;
+  padding: 0;
+}
+@media screen and (min-width: 768px) {
+  .wrapper {
+    width: 370px;
+    height: 370px;
+  }
+}
+
+.wrapperDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background-color: #afc7ff15;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapperDiv {
+    width: 450px;
+    height: 450px;
+  }
+}
