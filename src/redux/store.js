@@ -8,16 +8,18 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
+import { authPersistedReducer } from './auth/authSlice';
 import { categoriesReducer } from './categories/categoriesSlice';
+import { monoBankPersistedReducer } from './monoBank/monoBankSlice';
 import { transactionsReducer } from './transactions/transactionSlice';
 import { statisticReducer } from './transactionStatistic/statisticSlice';
 
 export const store = configureStore({
   reducer: {
-    // auth:,
+    auth: authPersistedReducer,
     transactions: transactionsReducer,
     categories: categoriesReducer,
-    // monoBank:,
+    monoBank: monoBankPersistedReducer,
     statistic: statisticReducer,
   },
 
