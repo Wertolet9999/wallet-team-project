@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Patron.module.css';
 
-export const PatronTwo = () => {
+export const Patron = () => {
   return (
     <div className={s.wrapperDiv}>
       <div className={s.wrapper}>
