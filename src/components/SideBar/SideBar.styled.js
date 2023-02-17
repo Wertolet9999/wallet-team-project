@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
 export const Wrap = styled.div`
+
   margin-top: 12px;
   padding: 0 44px;
+  
+
 
    @media screen and (min-width: 768px) {
  margin-top: 0;

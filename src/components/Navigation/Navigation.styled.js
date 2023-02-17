@@ -53,7 +53,7 @@ export const StyledUl = styled.ul`
   justify-content: space-between;
       align-items: center;
   margin:auto;
-  max-width: 480px;
+  max-width: 260px;
     
 
      @media screen and (max-width: 768px) {
