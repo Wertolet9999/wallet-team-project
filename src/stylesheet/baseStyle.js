@@ -8,6 +8,7 @@ export const BaseStyle = createGlobalStyle`
   box-sizing: border-box;
 }
 
+
 html {
   -moz-tab-size: 4;
   tab-size: 4;
