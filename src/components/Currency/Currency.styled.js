@@ -72,7 +72,7 @@ height: 124px;
 
 export const CurrencyList = styled.ul`
     margin: 0;
-    padding: 12px 20px 12px 20px;
+    padding: 12px 20px 12px 28px;
     align-items: center;
     justify-content: space-between;
     list-style: none;
@@ -82,18 +82,15 @@ export const CurrencyList = styled.ul`
     }
 
     @media (min-width: 768px) {
-        padding: 16px 20px 12px 20px;
+        padding: 16px 20px 12px 30px;
     }
 
     @media (min-width: 1280px) {
-        padding: 20px 58px 24px 48px;
+        padding: 20px 51px 24px 45px;
     }
 `;
 
-export const CurrencyItem = styled.li`
-    display: flex;
-    justify-content: space-between;
-`;
+
 
 export const HeaderTitle = styled.li`
     width: 60px;
@@ -104,11 +101,3 @@ export const HeaderTitle = styled.li`
     }
 `;
 
-export const SpanDescr = styled.span`
-    width: 60px;
-    text-align: center;
-
-    @media (min-width: 1280px) {
-        width: 70px;
-    }
-`;

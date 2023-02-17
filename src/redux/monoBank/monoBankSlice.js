@@ -4,7 +4,7 @@ import storage from 'redux-persist/lib/storage';
 import { getCurrency } from './monoBankOperations';
 
 const initialState = {
-  current: [],
+  currency: [],
   date: null,
   isLoading: false,
   error: null,
@@ -13,7 +13,7 @@ const initialState = {
 const monoBankPersistConfig = {
   key: 'currency',
   storage,
-  whitelist: ['current', 'date'],
+  whitelist: ['currency', 'date'],
 };
 
 const monoBankSlice = createSlice({
@@ -30,7 +30,8 @@ const monoBankSlice = createSlice({
       state.data = payload.date;
     },
     [getCurrency.fulfilled]: (state, { payload }) => {
-      state.current = payload;
+      const array = payload.slice(0,2)
+      state.currency = array;
       const data = payload.map(({ date }) => date);
       state.date = data[0];
       state.isLoading = false;

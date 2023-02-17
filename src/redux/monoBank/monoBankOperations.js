@@ -5,7 +5,7 @@ export const getCurrency = createAsyncThunk(
   'monoBank/getCurrency',
   async (_, { rejectWithValue, getState }) => {
     const dataMono = getState().monoBank.date
-    const currency = getState().monoBank.current;
+    const currency = getState().monoBank.currency;
 
     if (dataMono > (Date.now() + 1000 * 60 * 60)) {
       return {
