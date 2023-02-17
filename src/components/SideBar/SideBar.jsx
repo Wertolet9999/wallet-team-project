@@ -24,10 +24,12 @@ export const SideBar = () => {
       {isTablet && (
         <>
           <FlexWrap>
-            <Navigation />
+            <Wrap>
+              <Navigation />
+              <Balance />
+            </Wrap>
             <Currency />
           </FlexWrap>
-          <Balance />
         </>
       )}
       {isMac && (
