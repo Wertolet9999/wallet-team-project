@@ -152,7 +152,7 @@ export const RegistrationForm = () => {
             </FormButton>
           </Form>
 
-          <FormLink to={routes.LOGIN}>Log in</FormLink>
+          <FormLink to="/login">Log in</FormLink>
         </section>
       </Wrapper>
     </Container>
