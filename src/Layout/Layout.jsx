@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { WrapperDiv } from './Layout.styled';
-import { Container } from 'stylesheet/baseStyle';
+import { Container, Section } from 'stylesheet/baseStyle';
 import { SideBar } from 'components/SideBar/SideBar';
 import { useMedia } from 'react-use';
 import { Header } from 'components/Header/Header';
@@ -38,14 +38,16 @@ export const Layout = () => {
         </>
       ) : (
         <>
-          <Container>
-            <WrapperDiv>
-              <SideBar />
-              <Suspense fallback={<Loader />}>
-                <Outlet />
-              </Suspense>
-            </WrapperDiv>
-          </Container>
+          <Section>
+            <Container>
+              <WrapperDiv>
+                <SideBar />
+                <Suspense fallback={<Loader />}>
+                  <Outlet />
+                </Suspense>
+              </WrapperDiv>
+            </Container>
+          </Section>
         </>
       )}
     </>

@@ -1,19 +1,19 @@
 import React from 'react';
-import { CirclesWithBar } from 'react-loader-spinner';
+import { RingLoader } from 'react-spinners';
 
 export const Loader = () => {
   return (
-    <CirclesWithBar
-      height="100"
-      width="100"
-      color="#2864a1"
-      wrapperStyle={{}}
-      wrapperClass=""
-      visible={true}
-      outerCircleColor=""
-      innerCircleColor=""
-      barColor=""
-      ariaLabel="circles-with-bar-loading"
+    <RingLoader
+      color="#3050e1f4"
+      size={150}
+      // wrapperStyle={{
+      //   display: 'block',
+      //   textAlign: 'center',
+      //   left: '50%',
+      //   right: '50%',
+      //   top: '50%',
+      //   bottom: '50%',
+      // }}
     />
   );
 };
