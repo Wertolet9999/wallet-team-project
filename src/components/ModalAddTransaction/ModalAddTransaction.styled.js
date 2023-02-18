@@ -3,7 +3,6 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import { AiOutlineMinus } from 'react-icons/ai';
 
 const checkButtonColor = p => {
-  console.log(p);
   let backgroundColor;
   if (!p.props) {
     backgroundColor = '#24CCA7';
@@ -12,6 +11,7 @@ const checkButtonColor = p => {
   }
   return backgroundColor;
 };
+
 const checkButtonPosition = p => {
   if (!p.props) {
     return -4;
@@ -342,8 +342,8 @@ export const Expense = styled(AiOutlineMinus)`
 
 export const CloseButton = styled.button`
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: -60px;
+  top: -100px;
   background-color: transparent;
   border: 0;
   font-size: 16px;
