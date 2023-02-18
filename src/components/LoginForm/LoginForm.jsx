@@ -15,7 +15,6 @@ import {
 } from './Form.styled';
 import { IoMdMail } from 'react-icons/io';
 import { MdLock } from 'react-icons/md';
-import { routes } from 'service/routes';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
