@@ -35,7 +35,7 @@ export const TextBalance = styled.p`
 `;
 
 export const AmountBalance = styled.p`
-  margin-top: 12px;
+  /* margin-top: 12px; */
   color: #000000;
   font-size: 30px;
   line-height: calc(36 / 30);

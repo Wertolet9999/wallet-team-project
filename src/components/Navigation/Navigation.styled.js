@@ -51,24 +51,20 @@ export const StyledUl = styled.ul`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-      align-items: center;
-  margin:auto;
+  align-items: center;
+  margin: auto;
   max-width: 260px;
-    
 
-     @media screen and (max-width: 768px) {
-margin-top: 72px;
+  @media screen and (max-width: 768px) {
+    padding-top: 72px;
   }
 
   @media screen and (min-width: 768px) {
     flex-direction: column;
     justify-content: start;
     gap: 12px;
-        margin: unset;
-        margin-bottom:28px;
-         align-items: flex-start;
+    margin: unset;
+    margin-bottom: 28px;
+    align-items: flex-start;
   }
-  
 `;
-
-

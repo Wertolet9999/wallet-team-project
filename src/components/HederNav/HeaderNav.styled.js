@@ -37,6 +37,12 @@ export const LogOutButton = styled('button')`
   margin: 0;
   background-color: transparent;
   cursor: pointer;
+  color: #bdbdbd;
+  font-family: 'Circe';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
 
   transition: all 0.3s;
   svg {

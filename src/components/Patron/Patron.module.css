@@ -1,4 +1,4 @@
-p {
+.text {
   padding-top: 20px;
   font-family: cursive;
   font-weight: 500;
@@ -8,7 +8,7 @@ p {
   text-shadow: 1px 1px 1px #236767;
 }
 @media screen and (min-width: 768px) {
-  p {
+  .text {
     font-weight: 700;
   }
 }
