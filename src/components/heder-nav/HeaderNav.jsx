@@ -5,17 +5,19 @@ import { List, LogOutButton, SpanDead } from './HeaderNav.styled';
 import { logout } from 'redux/auth/authOperations';
 import { useState } from 'react';
 import { LogoutForm } from 'components/ModalLogout/ModalLogout';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectName } from 'redux/auth/authSelectors';
 
 const HeaderNav = () => {
   const isMobile = useMedia('(max-width: 767px)');
   const dispatch = useDispatch();
   const [isOpenLogoutModal, setIsOpenLogoutModal] = useState(false);
+  const name = useSelector(selectName);
 
   return (
     <List>
       <li>
-        <SpanDead>{/*{Name} {логика когбудет имя}*/} Name</SpanDead>
+        <SpanDead>{name}</SpanDead>
       </li>
       <li>
         {isOpenLogoutModal && (

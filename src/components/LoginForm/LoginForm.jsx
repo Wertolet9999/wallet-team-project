@@ -95,7 +95,7 @@ export const LoginForm = () => {
             <FormButton type="submit">Log in</FormButton>
           </Form>
 
-          <FormLink to={routes.REGISTER}>Register</FormLink>
+          <FormLink to="/register">Register</FormLink>
         </section>
       </Wrapper>
     </Container>
