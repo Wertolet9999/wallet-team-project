@@ -244,7 +244,7 @@ export const FormButton = styled.button`
 export const FormLink = styled(Link)`
   display: block;
   padding: 13px;
-  background-color: #24cca7;
+  /* background-color: #24cca7; */
   border: 1px solid #4a56e2;
   border-radius: 20px;
   font-size: 18px;

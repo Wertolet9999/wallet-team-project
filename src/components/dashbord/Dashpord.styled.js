@@ -8,7 +8,7 @@ const switchColor = ({ type }) => {
     case 'EXPENSE':
       return `#FF6596`;
     default:
-      return `black`;
+      return `#000000`;
   }
 };
 
@@ -30,30 +30,29 @@ export const Thhead = styled.th`
   background-color: white;
   padding: 15px 0;
   text-align: left;
- 
 
-   @media screen and (min-width: 767px){
-  :first-child {
-    padding-left: 20px;
-  border-radius: 30px 0 0 30px;
-  }
-  :nth-child(2){
-   
-width:84px;
-  }
-    :nth-child(4){
-   width:146px;
-  }
-    :nth-child(4){
-   width:118px;
-  }
-  :nth-child(5){
-    width:108px;
-  }
-  :last-child {
-    width:130px;
+  @media screen and (min-width: 767px) {
+    :first-child {
+      padding-left: 20px;
+      border-radius: 30px 0 0 30px;
+    }
+    :nth-child(2) {
+      width: 84px;
+    }
+    :nth-child(4) {
+      width: 146px;
+    }
+    :nth-child(4) {
+      width: 118px;
+    }
+    :nth-child(5) {
+      width: 108px;
+    }
+    :last-child {
+      width: 130px;
 
-    border-radius: 0 30px 30px 0;
+      border-radius: 0 30px 30px 0;
+    }
   }
 `;
 
@@ -173,7 +172,7 @@ export const BtnDel = styled.button`
 `;
 
 export const Span = styled.span`
-  color: ${p => p.theme.colors.black};
+  color: #000000;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.5;

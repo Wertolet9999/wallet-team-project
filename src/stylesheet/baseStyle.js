@@ -30,52 +30,9 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial,
-    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
-    font-size: 16px;
-  color: #000000;
-  background:#E7EAF2;
-}
 
-ul{
-  list-style: none;
-  padding: 0px;
-  margin: 0px;
-}
-
-h1, h2, h3, h4, h5, p{
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-a {
-  text-decoration: none;
-  cursor: pointer;
-}
-
-button {
-  cursor: pointer;
-}
-`;
-
-export const Section = styled.section`
-  margin: 0;
   @media screen and (min-width: 768px) {
-    position: relative;
-
-    background-image: linear-gradient(
-      rgba(255, 255, 255, 0.4),
-      rgba(255, 255, 255, 0.4)
-    );
-    backdrop-filter: blur(25px);
-    background-size: cover;
-    min-height: calc(100vh - 85px);
+  position: relative;
 
     ::before {
       content: '';
@@ -126,7 +83,7 @@ export const Section = styled.section`
 
   @media screen and (min-width: 1280px) {
     position: static;
-
+    
     ::before {
       width: 552px;
       height: 383px;
@@ -153,16 +110,64 @@ export const Section = styled.section`
       }
     }
   }
+}
+.Toastify__toast-theme--colored.Toastify__toast--success {
+  background-color: #24CCA7;
+}
+.Toastify__toast-theme--colored.Toastify__toast--warning {
+  background-color: #fed057;
+}
+.Toastify__toast-theme--colored.Toastify__toast--error {
+  background-color: #ff6596;
+}
 
-  .Toastify__toast-theme--colored.Toastify__toast--success {
-    background-color: #24cca7;
-  }
-  .Toastify__toast-theme--colored.Toastify__toast--warning {
-    background-color: #fed057;
-  }
-  .Toastify__toast-theme--colored.Toastify__toast--error {
-    background-color: #ff6596;
-  }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    font-size: 16px;
+  color: #000000;
+  background:#E7EAF2;
+}
+
+ul{
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+h1, h2, h3, h4, h5, p{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+`;
+
+export const Section = styled.section`
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.4)
+  );
+  backdrop-filter: blur(25px);
+
+  background-size: cover;
+  min-height: calc(100vh - 85px);
 `;
 
 export const Container = styled.div`

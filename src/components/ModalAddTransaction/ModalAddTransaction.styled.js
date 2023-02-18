@@ -62,7 +62,7 @@ export const CheckBox = styled.div`
 `;
 
 export const Span = styled.span`
-  font-family: Exo, sans-serif;
+  font-family: Circe, sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.5;
@@ -70,7 +70,7 @@ export const Span = styled.span`
 `;
 
 export const SpanIncome = styled.span`
-  font-family: Exo, sans-serif;
+  font-family: Circe, sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.5;
@@ -78,7 +78,7 @@ export const SpanIncome = styled.span`
 `;
 
 export const SpanExpense = styled.span`
-  font-family: Exo, sans-serif;
+  font-family: Circe, sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.5;
@@ -117,7 +117,7 @@ export const customStylesSelect = isMobile => ({
     borderBottom: '1px solid #E0E0E0',
 
     color: '#e0e0e0',
-    fontFamily: 'Exo,  sans-serif',
+    fontFamily: 'Circe,  sans-serif',
     fontWeight: `400`,
     fontSize: `18`,
     lineHeight: 1.5,
@@ -199,7 +199,7 @@ export const Amount = styled.input`
   height: 32px;
   border: 0;
   border-bottom: 1px solid #e0e0e0;
-  font-family: Exo, sans-serif;
+  font-family: Circe, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
@@ -230,7 +230,7 @@ export const Comment = styled.textarea`
   border: 0;
   border-bottom: 1px solid #e0e0e0;
   resize: none;
-  font-family: Exo, sans-serif;
+  font-family: Circe, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
