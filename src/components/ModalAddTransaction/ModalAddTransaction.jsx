@@ -30,28 +30,20 @@ import styles from '../ModalAddTransaction/ModalAddTransaction.module.css';
 import 'react-datetime/css/react-datetime.css';
 import { selectCategories } from 'redux/categories/categoriesSelectors';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCategories } from 'redux/categories/CategoriesOperations';
 import * as yup from 'yup';
 import { GrClose } from 'react-icons/gr';
-import {
-  addTransaction,
-  fetchTransactions,
-} from 'redux/transactions/transactionOperation';
+import { addTransaction } from 'redux/transactions/transactionOperation';
+import { selectBalance } from 'redux/transactions/transactionSelectors';
+import { toastStyled } from 'stylesheet/baseStyle';
+import { toast } from 'react-toastify';
 
 export const ModalAddTransaction = ({ onClose }) => {
   const categories = useSelector(selectCategories);
-  console.log('categories :>> ', categories);
-  // const categories = [
-  //   { value: 'chocolate', label: 'Chocolate' },
-  //   { value: 'strawberry', label: 'Strawberry' },
-  //   { value: 'vanilla', label: 'Vanilla' },
-  // ];
   const [transactionDate, setTransactionDate] = useState(new Date());
   const [categoryId, setCategoryId] = useState('');
-  // const balance = useSelector(selectBalance);
+  const balance = useSelector(selectBalance);
   const isMobile = useMedia('(max-width: 767px)');
   const dispatch = useDispatch();
-  // console.log(categories);
 
   const validationSchema = yup.object({
     amount: yup
@@ -85,9 +77,15 @@ export const ModalAddTransaction = ({ onClose }) => {
         comment,
         amount: type ? -Number(amount) : Number(amount),
       };
+      if (balance + newTransaction.amount < 0) {
+        toast.warn(
+          'Insufficient balance to complete the transaction!',
+          toastStyled
+        );
+        return;
+      }
       console.log(newTransaction);
       dispatch(addTransaction(newTransaction));
-
       resetForm();
       onClose();
     },
@@ -98,6 +96,17 @@ export const ModalAddTransaction = ({ onClose }) => {
   const disableFutureDate = current => {
     return current.isBefore(today) && current.isAfter(lastYear);
   };
+
+  const selectOption = () =>
+    categories.reduce((acc, category) => {
+      if (category.type !== 'INCOME') {
+        acc.push({
+          value: `${category.id}`,
+          label: `${category.name}`,
+        });
+      }
+      return acc;
+    }, []);
 
   return (
     <>
@@ -130,7 +139,7 @@ export const ModalAddTransaction = ({ onClose }) => {
             onChange={evt => {
               changeCategory(evt);
             }}
-            options={categories}
+            options={selectOption()}
             required
           ></Select>
         )}
