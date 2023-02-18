@@ -40,44 +40,21 @@ export const App = () => {
     <Routes>
       <Route
         path={routes.LOGIN}
-        element={
-          <PublicRoute path={routes.LOGIN} restricted>
-            <LoginPage />
-          </PublicRoute>
-        }
+        element={<PublicRoute component={<LoginPage />} />}
       />
       <Route
         path={routes.REGISTER}
-        element={
-          <PublicRoute restricted>
-            <RegisterPage />
-          </PublicRoute>
-        }
+        element={<PublicRoute component={<RegisterPage />} />}
       />
       <Route path={routes.HOME} element={<Layout />}>
-        <Route
-          index
-          element={
-            <PrivateRoute>
-              <DashboardPage />
-            </PrivateRoute>
-          }
-        />
+        <Route index element={<PrivateRoute component={<DashboardPage />} />} />
         <Route
           path={routes.DIAGRAM}
-          element={
-            <PrivateRoute>
-              <StatisticPage />
-            </PrivateRoute>
-          }
+          element={<PrivateRoute component={<StatisticPage />} />}
         />
         <Route
           path={routes.CURRENCY}
-          element={
-            <PrivateRoute>
-              <CurrencyPage />
-            </PrivateRoute>
-          }
+          element={<PrivateRoute component={<CurrencyPage />} />}
         />
         <Route path="*" element={<Navigate to={routes.HOME} />} />
       </Route>

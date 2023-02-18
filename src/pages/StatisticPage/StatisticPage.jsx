@@ -1,17 +1,6 @@
-import { Chart } from 'components/Chart/Chart';
-import { DiagramTab } from 'components/DiagramTab/DiagramTab';
-// import { Patron } from 'components/Patron/Patron';
-
-import { Table } from 'components/Table/Table';
+import { Statistic } from 'components/Statistic/Statistic';
 import React from 'react';
 
 export const StatisticPage = () => {
-  return (
-    <div>
-      <Chart />
-      <Table />
-      <DiagramTab />
-      {/* <Patron /> */}
-    </div>
-  );
-};
+  return <Statistic/>
+  };
