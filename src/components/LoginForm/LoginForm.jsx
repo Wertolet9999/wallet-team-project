@@ -15,6 +15,7 @@ import {
 } from './Form.styled';
 import { IoMdMail } from 'react-icons/io';
 import { MdLock } from 'react-icons/md';
+import { routes } from 'service/routes';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -94,7 +95,7 @@ export const LoginForm = () => {
             <FormButton type="submit">Log in</FormButton>
           </Form>
 
-          <FormLink to="/register">Register</FormLink>
+          <FormLink to={routes.REGISTER}>Register</FormLink>
         </section>
       </Wrapper>
     </Container>
