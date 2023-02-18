@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { AiOutlinePlus } from 'react-icons/ai';
+import { AiOutlineMinus } from 'react-icons/ai';
 
 const checkButtonColor = p => {
   console.log(p);
@@ -316,4 +318,39 @@ export const DivFlex = styled.div`
     flex-direction: column;
     gap: 40px;
   }
+`;
+export const Error = styled.div`
+  position: absolute;
+  max-width: 190px;
+  margin: 0;
+  font-size: 15px;
+  line-height: calc(27 / 18);
+  color: #ff6596;
+`;
+
+export const Income = styled(AiOutlinePlus)`
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
+`;
+
+export const Expense = styled(AiOutlineMinus)`
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
+`;
+
+export const CloseButton = styled.button`
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-color: transparent;
+  border: 0;
+  font-size: 16px;
+`;
+
+export const ButtonFlexDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 `;

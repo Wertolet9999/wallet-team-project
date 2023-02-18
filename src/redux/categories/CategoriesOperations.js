@@ -6,6 +6,7 @@ export const getCategories = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await baseAPI.get('/transaction-categories');
+      console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
