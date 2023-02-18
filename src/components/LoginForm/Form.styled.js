@@ -15,7 +15,7 @@ export const Page = styled.div`
     flex-direction: column;
     justify-content: center;
     height: 100vh;
-    background-color: ${p => p.theme.colors.white};
+    background-color: #ffffff;
   }
 `;
 
@@ -121,7 +121,7 @@ export const Title = styled.h1`
   font-weight: 400;
   font-size: 30px;
   line-height: calc(45 / 30);
-  color: ${p => p.theme.colors.black};
+  color: #000000;
   @media screen and (max-width: 1279px) {
     top: 163px;
     right: 153px;
@@ -144,8 +144,8 @@ export const Wrapper = styled.div`
     margin-left: auto;
     margin-right: auto;
     padding: 40px 58.5px 62px 65px;
-    border-radius: ${p => p.theme.borderRadius.r20};
-    background-color: ${p => p.theme.colors.white};
+    border-radius: 20px;
+    background-color: #ffffff;
   }
   @media screen and (min-width: 1280px) {
     margin-right: 91px;
@@ -170,7 +170,7 @@ export const Label = styled.label`
     height: 24px;
     fill: ${p => {
       if (p.value.length > 0) {
-        return !p.error ? p.theme.colors.btGreen : p.theme.colors.btPink;
+        return !p.error ? '#24CCA7' : '#ff6596';
       }
       return '#e0e0e0';
     }};
@@ -181,7 +181,7 @@ export const Label = styled.label`
     left: 0;
     width: 100%;
     height: 0;
-    border: ${p => p.theme.borderColor.c};
+    border: 4px solid #e5f1ef;
     border-radius: 8px;
   }
   span {
@@ -191,10 +191,9 @@ export const Label = styled.label`
     display: block;
     width: ${p => (p.length < 13 ? (p.length / 12) * 102 : 102)}%;
     height: 0;
-    border: 4px solid
-      ${p => (!p.error ? p.theme.colors.btGreen : p.theme.colors.btPink)};
+    border: 4px solid ${p => (!p.error ? '#24CCA7' : '#ff6596')};
     border-radius: 8px;
-    box-shadow: ${p => p.theme.boxShadow.confirmPassword};
+    box-shadow: 0px 1px 8px rgba(36, 204, 167, 0.5);
   }
   p {
     position: absolute;
@@ -203,7 +202,7 @@ export const Label = styled.label`
     margin: 0;
     font-size: 10px;
     line-height: calc(27 / 18);
-    color: ${p => p.theme.colors.btPink};
+    color: #ff6596;
   }
 `;
 
@@ -211,29 +210,29 @@ export const Input = styled.input`
   width: 100%;
   padding: 8px 8px 8px 54.5px;
   border: none;
-  border-bottom: ${p => p.theme.borderColor.comment};
+  border-bottom: 1px solid #e0e0e0;
   font-size: 18px;
   line-height: calc(27 / 18);
   ::placeholder {
-    color: ${p => p.theme.colors.inputGray};
+    color: #bdbdbd;
   }
 `;
 
 export const FormButton = styled.button`
   padding: 13px;
-  background: ${p => p.theme.colors.btGreen};
+  background: #24cca7;
   border: 1px solid transparent;
-  border-radius: ${p => p.theme.borderRadius.r20};
+  border-radius: 20px;
   font-size: 18px;
   font-weight: 400;
   line-height: calc(27 / 18);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: ${p => p.theme.colors.white};
+  color: #ffffff;
   &:hover,
   &:focus {
     transform: scale(1.05);
-    box-shadow: 0px 6px 15px ${p => p.theme.colors.btGreen};
+    box-shadow: 0px 6px 15px #24cca7;
   }
   @media screen and (min-width: 768px) {
     width: 300px;
@@ -245,21 +244,21 @@ export const FormButton = styled.button`
 export const FormLink = styled(Link)`
   display: block;
   padding: 13px;
-  background-color: ${p => p.theme.colors.white};
-  border: ${p => p.theme.borderColor.b};
-  border-radius: ${p => p.theme.borderRadius.r20};
+  background-color: #24cca7;
+  border: 1px solid #4a56e2;
+  border-radius: 20px;
   font-size: 18px;
   line-height: calc(27 / 18);
   text-align: center;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
-  color: ${p => p.theme.colors.btBlue};
+  color: #4a56e2;
   transition: all 0.3s;
   &:hover,
   &:focus {
     transform: scale(1.05);
-    box-shadow: 0px 6px 15px ${p => p.theme.colors.btBlue};
+    box-shadow: 0px 6px 15px #4a56e2;
   }
   @media screen and (min-width: 768px) {
     width: 300px;
