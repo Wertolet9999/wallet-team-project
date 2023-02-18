@@ -64,7 +64,7 @@ export const TableList = styled.table`
 `;
 
 export const TableHeading = styled.th`
-  &:first-child {
+  &:first-of-type {
     border-radius: 30px 0 0 30px;
   }
   &:last-child {
@@ -87,7 +87,7 @@ export const TrData = styled.tr`
   &:not(:last-child) {
     margin-bottom: 8px;
   }
-  &:first-child {
+  &:first-of-type {
     margin-top: 8px;
   }
   position: relative;
@@ -213,7 +213,7 @@ export const customStylesSelect = isMobile => ({
   container: styles => ({
     ...styles,
     flexGrow: '1',
-    ':first-child': {
+    ':first-of-type': {
       marginRight: isMobile ? '0' : '20px',
       flexGrow: '2',
       flexShrink: '0',
