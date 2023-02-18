@@ -33,15 +33,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCategories } from 'redux/categories/CategoriesOperations';
 import * as yup from 'yup';
 import { GrClose } from 'react-icons/gr';
-import { addTransaction } from 'redux/transactions/transactionOperation';
+import {
+  addTransaction,
+  fetchTransactions,
+} from 'redux/transactions/transactionOperation';
 
 export const ModalAddTransaction = ({ onClose }) => {
-  // const categories = useSelector(selectCategories);
-  const categories = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
-  ];
+  const categories = useSelector(selectCategories);
+  console.log('categories :>> ', categories);
+  // const categories = [
+  //   { value: 'chocolate', label: 'Chocolate' },
+  //   { value: 'strawberry', label: 'Strawberry' },
+  //   { value: 'vanilla', label: 'Vanilla' },
+  // ];
   const [transactionDate, setTransactionDate] = useState(new Date());
   const [categoryId, setCategoryId] = useState('');
   // const balance = useSelector(selectBalance);
@@ -83,6 +87,7 @@ export const ModalAddTransaction = ({ onClose }) => {
       };
       console.log(newTransaction);
       dispatch(addTransaction(newTransaction));
+
       resetForm();
       onClose();
     },

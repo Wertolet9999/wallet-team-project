@@ -34,7 +34,7 @@ body {
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
     font-size: 16px;
   color: #000000;
-      background-color: rgb(231, 234, 242);
+  background:#E7EAF2;
 }
 
 ul{
