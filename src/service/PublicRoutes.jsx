@@ -4,7 +4,7 @@ import { selectToken } from 'redux/auth/authSelectors';
 import { routes } from './routes';
 
 export const PublicRoute = ({ component }) => {
-  const isAuth = Boolean(useSelector(selectToken));
+  const isAuth = useSelector(selectToken);
 
   return !isAuth ? component : <Navigate to={routes.HOME} />;
 };

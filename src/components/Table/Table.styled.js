@@ -58,9 +58,10 @@ export const TextMessage = styled.h2`
 export const TableList = styled.table`
   width: 100%;
   border-collapse: collapse;
-  font-family: Exo, sans-serif;
-  color: #ffffff;
+  font-family: Circe, sans-serif;
+  color: #000000;
   text-align: center;
+
 `;
 
 export const TableHeading = styled.th`
@@ -78,9 +79,12 @@ export const TableHeading = styled.th`
     padding: ${p => (p.left ? '16px 10px 15px 28px' : '16px 28px 15px 10px')};
   }
 
+
   font-weight: 700;
   font-size: 18px;
   line-height: 1.5;
+  color:#000000;
+
 `;
 
 export const TrData = styled.tr`
@@ -195,7 +199,7 @@ export const customStylesSelect = isMobile => ({
     paddingRight: '16px',
 
     color: '#e0e0e0',
-    fontFamily: 'Exo,  sans-serif',
+    fontFamily: 'Circe,  sans-serif',
     fontWeight: `400`,
     fontSize: `18`,
     lineHeight: 1.5,

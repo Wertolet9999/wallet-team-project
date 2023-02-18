@@ -73,7 +73,10 @@ export const ModalAddTransaction = ({ onClose }) => {
       const newTransaction = {
         transactionDate,
         type: type ? 'EXPENSE' : 'INCOME',
-        categoryId: categoryId && type ? categoryId : 'INCOME-ID',
+        categoryId:
+          categoryId && type
+            ? categoryId
+            : '063f1132-ba5d-42b4-951d-44011ca46262',
         comment,
         amount: type ? -Number(amount) : Number(amount),
       };
@@ -84,7 +87,7 @@ export const ModalAddTransaction = ({ onClose }) => {
         );
         return;
       }
-      console.log(newTransaction);
+      addTransaction();
       dispatch(addTransaction(newTransaction));
       resetForm();
       onClose();

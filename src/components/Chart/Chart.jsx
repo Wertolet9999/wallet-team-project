@@ -1,4 +1,5 @@
 import { Chart as ChartJS, ArcElement, Tooltip } from 'chart.js';
+import { Loader } from 'components/Loader/Loader';
 import { Doughnut } from 'react-chartjs-2';
 import { switchBg } from 'stylesheet/switchBg';
 import { BalanceText, Loading } from './Chart.styled';
@@ -71,7 +72,9 @@ export const Chart = ({ trSummary, isLoading, balance }) => {
   return (
     <>
       {isLoading ? (
-        <Loading>Loading...</Loading>
+        <Loading>
+          <Loader />
+        </Loading>
       ) : (
         <>
           <Doughnut redraw={redrawValue()} options={options} data={data} />

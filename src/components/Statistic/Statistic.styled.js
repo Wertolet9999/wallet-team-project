@@ -7,16 +7,14 @@ const Title = styled.h2`
   font-size: 30px;
   line-height: 1.5;
   color: #000000;
-  @media screen and (max-width: 767px) {
-    margin-top: 28px;
-  }
+
   @media screen and (min-width: 768px) {
     margin-bottom: 20px;
   }
 `;
 
 const Wrapper = styled.div`
-  padding-top: 128px;
+  padding-top: 40px;
   padding-bottom: 30px;
 
   @media screen and (max-width: 767px) {
@@ -24,7 +22,7 @@ const Wrapper = styled.div`
     max-width: 300px;
   }
   @media screen and (min-width: 768px) {
-    padding: 10px 0 10px;
+    padding: 0 0 10px;
   }
   @media screen and (min-width: 1280px) {
     padding: 31px 15px 10px 68px;

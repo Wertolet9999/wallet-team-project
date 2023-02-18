@@ -1,4 +1,4 @@
-export const switchBg = name => {
+export const switchBg = ({name}) => {
   switch (name) {
     case 'Main expenses':
       return '#fed057';

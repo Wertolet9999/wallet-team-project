@@ -27,7 +27,7 @@ export const BalanceDiv = styled.div`
 `;
 
 export const TextBalance = styled.p`
-  font-family: Exo, sans-serif;
+  font-family: Circe, sans-serif;
   font-size: 12px;
   line-height: 1.5;
   text-transform: uppercase;
