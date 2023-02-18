@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-import { selectIsAuth } from 'redux/auth/authSelectors';
+import { selectToken } from 'redux/auth/authSelectors';
 import { routes } from './routes';
 
 export const PublicRoute = ({ component }) => {
-  const isAuth = Boolean(useSelector(selectIsAuth));
+  const isAuth = Boolean(useSelector(selectToken));
 
   return !isAuth ? component : <Navigate to={routes.HOME} />;
 };
