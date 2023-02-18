@@ -1,26 +1,26 @@
-export const switchBg = ({ name, theme: { colors } }) => {
+export const switchBg = name => {
   switch (name) {
     case 'Main expenses':
-      return colors.yellow;
+      return '#fed057';
     case 'Products':
-      return colors.lReddy;
+      return '#FFD8D0';
     case 'Car':
-      return colors.reddy;
+      return '#fd9498';
     case 'Self care':
-      return colors.lPurple;
+      return '#C5BAFF';
     case 'Child care':
-      return colors.lBlue;
+      return '#6E78E8';
     case 'Household products':
-      return colors.btBlue;
+      return '#4A56E2';
     case 'Education':
-      return colors.lBlight;
+      return '#81E1FF';
     case 'Leisure':
-      return colors.lGreen;
+      return '#24cca7';
     case 'Entertainment':
-      return colors.btPink;
+      return '#ff6596';
     case 'Other expenses':
-      return colors.green;
+      return '#00AD84';
     default:
-      return colors.btBlue;
+      return '#4A56E2';
   }
 };
