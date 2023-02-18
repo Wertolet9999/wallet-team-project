@@ -8,7 +8,7 @@ import { Suspense } from 'react';
 import { Loader } from 'components/Loader/Loader';
 import { useDispatch, useSelector } from 'react-redux/es/exports';
 import { useEffect } from 'react';
-import { selectIsAuth, selectToken } from 'redux/auth/authSelectors';
+import { selectToken } from 'redux/auth/authSelectors';
 import { fetchTransactions } from 'redux/transactions/transactionOperation';
 import { getCategories } from 'redux/categories/CategoriesOperations';
 
