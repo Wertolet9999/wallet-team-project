@@ -8,18 +8,18 @@ import ModalWindowOverlay from 'components/ModalWindowOverlay/ModalWindowOverlay
 
 import React, { useState } from 'react';
 import { useMedia } from 'react-use';
-// import { useDispatch, useSelector } from 'react-redux';
-// import {
-//   selectIsLoading,
-//   selectTransaction,
-// } from 'redux/transactions/transactionSelectors';
-// import { selectCategories } from 'redux/categories/categoriesSelectors';
-// import { Patron } from 'components/Patron/Patron';
-// import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  selectIsLoading,
+  selectTransaction,
+} from 'redux/transactions/transactionSelectors';
+import { selectCategories } from 'redux/categories/categoriesSelectors';
+import { Patron } from 'components/Patron/Patron';
+import { useEffect } from 'react';
 
 export const DashboardPage = () => {
   const isMobile = useMedia('(max-width: 767px)');
-  // const [transactionToEdit, setTransactionToEdit] = useState(null);
+  const [transactionToEdit, setTransactionToEdit] = useState(null);
   // const dispatch = useDispatch();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   // const isAuth = useSelector(state => state.auth.isAuth);
@@ -29,18 +29,18 @@ export const DashboardPage = () => {
   //   }
   // }, [dispatch, isAuth]);
 
-  // const transactions = useSelector(selectTransaction);
-  // const categories = useSelector(selectCategories);
-  // const isFetchingTransaction = useSelector(selectIsLoading);
-  // console.log(transactions);
+  const transactions = useSelector(selectTransaction);
+  const categories = useSelector(selectCategories);
+  const isFetchingTransaction = useSelector(selectIsLoading);
+  console.log(transactions);
   // console.log(categories);
   // console.log(isFetchingTransaction);
   const handleModalOpen = () => {
     setModalIsOpen(true);
   };
-  // const handleEditModal = transaction => {
-  //   setTransactionToEdit(transaction);
-  // };
+  const handleEditModal = transaction => {
+    setTransactionToEdit(transaction);
+  };
   const handleModalClose = () => {
     setModalIsOpen(false);
   };
@@ -50,11 +50,11 @@ export const DashboardPage = () => {
       {isMobile && <Balance />}
       {/* {transactions.length > 0 ? (
         <> */}
-      {/* <Dashpord
-        // transactions={transactions}
-        // categories={categories}
-        // openEditModal={handleEditModal}
-      /> */}
+      <Dashpord
+        transactions={transactions}
+        categories={categories}
+        openEditModal={handleEditModal}
+      />
       <ButtonAddTransactions onClick={handleModalOpen} />
       {/* </>
       ) : (
