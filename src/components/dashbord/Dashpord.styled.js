@@ -18,10 +18,10 @@ export const Table = styled.table`
   border-collapse: collapse;
   border-spacing: 0;
   @media screen and (min-width: 767px) {
-    margin: 46px 16px 0 69px;
     width: 704px;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
+    margin: 46px 16px 0 69px;
     width: 715px;
   } ;
 `;

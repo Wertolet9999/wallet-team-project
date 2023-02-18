@@ -2,11 +2,10 @@ import styled from 'styled-components';
 
 export const Wrap = styled.div`
   /* margin-top: 12px; */
-  padding: 0 44px;
+  /* padding: 0 44px; */
 
   @media screen and (min-width: 768px) {
-    margin-top: 0;
-    padding: 0;
+    padding-top: 8px;
   }
 `;
 
@@ -15,7 +14,7 @@ export const FlexWrap = styled.div`
     display: flex;
     gap: 32px;
     padding-top: 32px;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
   }
   @media screen and (min-width: 1280px) {
     position: relative;
