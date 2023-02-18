@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { MdDelete, MdEdit } from 'react-icons/md';
 
 const switchColor = ({ type }) => {
   switch (type) {
@@ -14,6 +13,7 @@ const switchColor = ({ type }) => {
 
 export const Table = styled.table`
   width: 280px;
+  height: fit-content;
   margin: 32px auto 8px;
   border-collapse: collapse;
   border-spacing: 0;
@@ -39,7 +39,7 @@ export const Thhead = styled.th`
     :nth-child(2) {
       width: 84px;
     }
-    :nth-child(4) {
+    :nth-child(3) {
       width: 146px;
     }
     :nth-child(4) {
@@ -70,7 +70,6 @@ export const Tr = styled.tr`
   }
   position: relative;
   @media screen and (min-width: 768px) {
-    height: 52px;
     width &:not(:last-child) {
       &::after {
         content: '';
@@ -90,7 +89,7 @@ export const Td = styled.td`
   @media screen and (max-width: 767px) {
     padding: 8px 10px;
     display: flex;
-    flex-grow: 1;
+    flex-grow: 0;
     width: 100%;
     align-items: center;
     justify-content: space-between;
@@ -99,17 +98,13 @@ export const Td = styled.td`
     }
   }
 
-  height: 52px;
-  line-height: calc(24 / 16);
-  color: #000000;
-  font-weight: 400;
-
-  font-size: 16px;
   :nth-child(5) {
     color: ${switchColor};
   }
   @media screen and (min-width: 767px) {
     :first-child {
+      width: 130px;
+      font-weit: 400;
       padding-left: 20px;
     }
     :nth-child(2) {
@@ -117,7 +112,7 @@ export const Td = styled.td`
       text-align: left;
       width: 84px;
     }
-    :nth-child(4) {
+    :nth-child(3) {
       width: 146px;
     }
     :nth-child(4) {
@@ -130,9 +125,7 @@ export const Td = styled.td`
     :last-child {
       width: 130px;
       text-align: centr;
-      display: flex;
-      justify-content: centr;
-      align-items: centr;
+
       padding-right: 8px;
       padding-left: 33px;
     }
@@ -157,7 +150,7 @@ export const BtnDel = styled.button`
 
   width: 67px;
   height: 26px;
-  margin: auto 0;
+
   font-family: 'Circe';
   font-style: normal;
   font-weight: 400;
