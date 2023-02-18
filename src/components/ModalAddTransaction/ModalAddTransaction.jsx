@@ -33,7 +33,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCategories } from 'redux/categories/CategoriesOperations';
 import * as yup from 'yup';
 import { GrClose } from 'react-icons/gr';
-import { addTransaction } from 'redux/transactions/transactionOperation';
+import {
+  addTransaction,
+  fetchTransactions,
+} from 'redux/transactions/transactionOperation';
 
 export const ModalAddTransaction = ({ onClose }) => {
   // const categories = useSelector(selectCategories);
@@ -83,6 +86,7 @@ export const ModalAddTransaction = ({ onClose }) => {
       };
       console.log(newTransaction);
       dispatch(addTransaction(newTransaction));
+
       resetForm();
       onClose();
     },
