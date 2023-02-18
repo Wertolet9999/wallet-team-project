@@ -16,25 +16,27 @@ import {
 import { selectCategories } from 'redux/categories/categoriesSelectors';
 import { Patron } from 'components/Patron/Patron';
 import { useEffect } from 'react';
+import { fetchTransactions } from 'redux/transactions/transactionOperation';
+import { getCategories } from 'redux/categories/CategoriesOperations';
 
 export const DashboardPage = () => {
   const isMobile = useMedia('(max-width: 767px)');
   const [transactionToEdit, setTransactionToEdit] = useState(null);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  // const isAuth = useSelector(state => state.auth.isAuth);
-  // useEffect(() => {
-  //   if (isAuth) {
-  //     dispatch(transactions());
-  //   }
-  // }, [dispatch, isAuth]);
+  const isAuth = useSelector(state => state.auth.isAuth);
+
+  useEffect(() => {
+    if (isAuth) {
+      dispatch(fetchTransactions());
+      dispatch(getCategories());
+    }
+  }, [dispatch, isAuth]);
 
   const transactions = useSelector(selectTransaction);
   const categories = useSelector(selectCategories);
-  const isFetchingTransaction = useSelector(selectIsLoading);
-  console.log(transactions);
-  // console.log(categories);
-  // console.log(isFetchingTransaction);
+  const isLoading = useSelector(selectIsLoading);
+
   const handleModalOpen = () => {
     setModalIsOpen(true);
   };
@@ -48,22 +50,18 @@ export const DashboardPage = () => {
   return (
     <>
       {isMobile && <Balance />}
-      {/* {transactions.length > 0 ? (
-        <> */}
-      <Dashpord
-        transactions={transactions}
-        categories={categories}
-        openEditModal={handleEditModal}
-      />
-      <ButtonAddTransactions onClick={handleModalOpen} />
-      {/* </>
+      {!isLoading && transactions.length === 0 ? (
+        <Patron />
       ) : (
-        !isFetchingTransaction && (
-          <button onClick={handleModalOpen}>
-            <Patron />
-          </button>
-        )
-      )} */}
+        <Dashpord
+          transactions={transactions}
+          categories={categories}
+          openEditModal={handleEditModal}
+        />
+      )}
+
+      <ButtonAddTransactions onClick={handleModalOpen} />
+
       {modalIsOpen && (
         <ModalWindowOverlay clickOnBackdrop={handleModalClose}>
           {modalIsOpen ? (

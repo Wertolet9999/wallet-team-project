@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { MdDelete, MdEdit } from 'react-icons/md';
 
-const switchColor = ({ type, theme: { colors } }) => {
+const switchColor = ({ type }) => {
   switch (type) {
     case 'INCOME':
       return `#24CCA7`;

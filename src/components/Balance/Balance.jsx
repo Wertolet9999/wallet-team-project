@@ -1,9 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { selectBalance } from 'redux/transactions/transactionSelectors';
 import { AmountBalance, BalanceDiv, TextBalance } from './Balance.styled';
 
 export const Balance = () => {
-  // const currentBalance = useSelector(selectBalance);
-  const currentBalance = 20000;
+  const currentBalance = useSelector(selectBalance);
+
   return (
     <BalanceDiv>
       <TextBalance>your balance</TextBalance>
