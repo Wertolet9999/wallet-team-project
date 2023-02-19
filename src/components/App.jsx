@@ -1,11 +1,12 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { routes } from 'service/routes';
 import { Layout } from 'Layout/Layout';
-import { PrivateRoute } from 'service/PrivatRoutes';
-import { PublicRoute } from 'service/PublicRoutes';
+// import { PrivateRoute } from 'service/PrivatRoutes';
+// import { PublicRoute } from 'service/PublicRoutes';
 import { lazy, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchCurrentUser } from 'redux/auth/authOperations';
+import { selectToken } from 'redux/auth/authSelectors';
 
 const DashboardPage = lazy(() =>
   import('../pages/DashboardPage/DashboardPage').then(module => ({
@@ -38,6 +39,7 @@ const LoginPage = lazy(() =>
 );
 
 export const App = () => {
+  const token = Boolean(useSelector(selectToken));
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -46,26 +48,27 @@ export const App = () => {
 
   return (
     <Routes>
+      {!token ? (
+        <>
+          <Route path={routes.LOGIN} element={<LoginPage />} />
+          <Route path={routes.REGISTER} element={<RegisterPage />} />
+        </>
+      ) : (
+        <>
+          <Route path={routes.HOME} element={<Layout />}>
+            <Route index element={<DashboardPage />} />
+            <Route path={routes.DIAGRAM} element={<StatisticPage />} />
+            <Route path={routes.CURRENCY} element={<CurrencyPage />} />
+          </Route>
+        </>
+      )}
+
       <Route
-        path={routes.LOGIN}
-        element={<PublicRoute component={<LoginPage />} />}
+        path="*"
+        element={
+          token ? <Navigate to={routes.HOME} /> : <Navigate to={routes.LOGIN} />
+        }
       />
-      <Route
-        path={routes.REGISTER}
-        element={<PublicRoute component={<RegisterPage />} />}
-      />
-      <Route path={routes.HOME} element={<Layout />}>
-        <Route index element={<PrivateRoute component={<DashboardPage />} />} />
-        <Route
-          path={routes.DIAGRAM}
-          element={<PrivateRoute component={<StatisticPage />} />}
-        />
-        <Route
-          path={routes.CURRENCY}
-          element={<PrivateRoute component={<CurrencyPage />} />}
-        />
-        <Route path="*" element={<Navigate to={routes.HOME} />} />
-      </Route>
     </Routes>
   );
 };

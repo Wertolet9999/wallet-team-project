@@ -6,37 +6,43 @@ import { useMedia } from 'react-use';
 import { Header } from 'components/Header/Header';
 import { Suspense } from 'react';
 import { Loader } from 'components/Loader/Loader';
+import { useSelector } from 'react-redux';
+import { selectToken } from 'redux/auth/authSelectors';
+import { ErrorMessage } from 'formik';
 
 export const Layout = () => {
   const isMobile = useMedia('(max-width: 767px)');
+  const token = Boolean(useSelector(selectToken));
 
   return (
     <>
-      <Header />
-      {isMobile ? (
+      {token ? (
         <>
-          <WrapperDiv>
-            <SideBar />
-            <Container>
-              <Suspense fallback={<Loader />}>
-                <Outlet />
-              </Suspense>
-            </Container>
-          </WrapperDiv>
-        </>
-      ) : (
-        <>
-          <Section>
-            <Container>
-              <WrapperDiv>
-                <SideBar />
+          <Header />
+          {isMobile ? (
+            <WrapperDiv>
+              <SideBar />
+              <Container>
                 <Suspense fallback={<Loader />}>
                   <Outlet />
                 </Suspense>
-              </WrapperDiv>
-            </Container>
-          </Section>
+              </Container>
+            </WrapperDiv>
+          ) : (
+            <Section>
+              <Container>
+                <WrapperDiv>
+                  <SideBar />
+                  <Suspense fallback={<Loader />}>
+                    <Outlet />
+                  </Suspense>
+                </WrapperDiv>
+              </Container>
+            </Section>
+          )}
         </>
+      ) : (
+        <ErrorMessage message="You must be logged in to view this content" />
       )}
     </>
   );
