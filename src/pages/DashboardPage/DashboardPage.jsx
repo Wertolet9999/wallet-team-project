@@ -57,10 +57,9 @@ export const DashboardPage = () => {
           transactions={transactions}
           categories={categories}
           openEditModal={handleEditModal}
+          handleModalOpen={handleModalOpen}
         />
       )}
-
-      <ButtonAddTransactions onClick={handleModalOpen} />
 
       {modalIsOpen && (
         <ModalWindowOverlay clickOnBackdrop={handleModalClose}>

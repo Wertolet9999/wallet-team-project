@@ -21,7 +21,7 @@ export const StyledBtn = styled.button`
 
   @media (max-width: 1279px) {
     position: sticky;
-    left: 100vw;
+    right: 20px;
     bottom: 20px;
 
     /* position: absolute;
