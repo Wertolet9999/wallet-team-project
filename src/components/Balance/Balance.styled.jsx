@@ -13,6 +13,7 @@ export const BalanceDiv = styled.div`
   border-radius: 20px;
   @media screen and (min-width: 376px) {
     width: 336px;
+    margin-top: 12px;
   }
   @media screen and (min-width: 768px) {
     /* margin-top: 28px; */

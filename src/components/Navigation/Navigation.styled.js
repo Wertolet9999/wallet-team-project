@@ -56,7 +56,7 @@ export const StyledUl = styled.ul`
   max-width: 260px;
 
   @media screen and (max-width: 768px) {
-    padding-top: 72px;
+    padding-top: 12px;
   }
 
   @media screen and (min-width: 768px) {

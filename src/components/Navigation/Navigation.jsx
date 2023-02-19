@@ -4,13 +4,16 @@ import { useMedia } from 'react-use';
 import { IoMdHome } from 'react-icons/io';
 import { MdTimeline } from 'react-icons/md';
 import { FaDollarSign } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
+import { selectToken } from 'redux/auth/authSelectors';
 
 export const Navigation = () => {
   const isMobile = useMedia('(max-width: 767px)');
-  const isAuth = false;
+  const token = Boolean(useSelector(selectToken));
+
   return (
     <StyledUl>
-      {isAuth ? (
+      {!token && (
         <>
           <li>
             <StyledNavLink to={routes.LOGIN}>LOGIN</StyledNavLink>
@@ -19,7 +22,8 @@ export const Navigation = () => {
             <StyledNavLink to={routes.REGISTER}>REGISTER</StyledNavLink>
           </li>
         </>
-      ) : (
+      )}
+      {token && (
         <>
           <li>
             <StyledNavLink to={routes.HOME}>
