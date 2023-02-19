@@ -87,7 +87,6 @@ export const ModalAddTransaction = ({ onClose }) => {
         );
         return;
       }
-      addTransaction();
       dispatch(addTransaction(newTransaction));
       resetForm();
       onClose();
