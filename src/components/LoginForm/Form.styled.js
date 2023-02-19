@@ -155,7 +155,7 @@ export const Wrapper = styled.div`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
   margin-top: 60px;
   margin-bottom: 20px;
 `;

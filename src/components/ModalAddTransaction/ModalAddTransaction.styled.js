@@ -37,7 +37,6 @@ export const ModalForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
 `;
 
 export const Label = styled.label`
@@ -260,6 +259,11 @@ export const Button = styled.button`
   background-color: #fff;
   transition: all 0.3s;
   z-index: 10;
+
+  &:first-child {
+    margin-top: 40px;
+  }
+
   &:hover {
     transform: scale(1.05);
   }
@@ -298,7 +302,8 @@ export const DateInput = styled.div`
     position: relative;
     top: 25%;
     left: 90%;
-    fill: #000;
+    /* fill: #000; */
+    fill: blue;
   }
   &:focus svg {
     fill: blue;
@@ -344,6 +349,15 @@ export const CloseButton = styled.button`
   position: absolute;
   right: -60px;
   top: -100px;
+  background-color: transparent;
+  border: 0;
+  font-size: 16px;
+`;
+
+export const CloseButtonEd = styled.button`
+  position: absolute;
+  right: -60px;
+  top: -225px;
   background-color: transparent;
   border: 0;
   font-size: 16px;

@@ -18,7 +18,7 @@ export const StyledBtn = styled.button`
   width: 44px;
   height: 44px;
   background: #24cca7;
-  border-color: #24cca7;
+  border: none;
   box-shadow: 0px 6px 15px rgba(36, 204, 167, 0.5);
   transition: all 0.5s ease-in-out;
   @media (max-width: 768px) {

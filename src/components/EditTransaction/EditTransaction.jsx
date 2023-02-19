@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { GrClose } from 'react-icons/gr';
 import {
-  Button,
   CloseButton,
+  CloseButtonEd,
   ModalAddTransactionTitle,
   ModalForm,
 } from 'components/ModalAddTransaction/ModalAddTransaction.styled';
@@ -10,7 +10,12 @@ import { selectCategories } from 'redux/categories/categoriesSelectors';
 import { useMedia } from 'react-use';
 import { useFormik } from 'formik';
 import { updateTransaction } from 'redux/transactions/transactionOperation';
-import { Category, Comment, TransactionData } from './EditTransaction.styled';
+import {
+  ButtonEdit,
+  Category,
+  Comment,
+  TransactionData,
+} from './EditTransaction.styled';
 
 export const EditTransaction = ({ transaction, close }) => {
   const categories = useSelector(selectCategories);
@@ -60,16 +65,16 @@ export const EditTransaction = ({ transaction, close }) => {
           {values.comment}
         </Comment>
 
-        <Button type="submit" primary>
+        <ButtonEdit type="submit" primary>
           UPDATE
-        </Button>
-        <Button type="button" onClick={close}>
+        </ButtonEdit>
+        <ButtonEdit type="button" onClick={close}>
           Cancel
-        </Button>
+        </ButtonEdit>
         {!isMobile && (
-          <CloseButton type="button" onClick={close} aria-label="close">
+          <CloseButtonEd type="button" onClick={close} aria-label="close">
             <GrClose />
-          </CloseButton>
+          </CloseButtonEd>
         )}
       </ModalForm>
     </>

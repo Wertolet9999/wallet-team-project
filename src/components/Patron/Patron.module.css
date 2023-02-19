@@ -621,6 +621,8 @@
   border-radius: 50%;
   margin: auto;
   background-color: #afc7ff15;
+
+  margin-top: 100px;
 }
 
 @media screen and (min-width: 768px) {

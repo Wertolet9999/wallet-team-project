@@ -44,7 +44,6 @@ export const Ulheads = styled.ul`
 `;
 
 export const Liheads = styled.li`
-  text-align: left;
   @media screen and (min-width: 767px) {
     :first-child {
       width: 103px;
@@ -88,6 +87,20 @@ export const Liheads = styled.li`
 
 export const Ultable = styled.ul`
   display: flex;
+  font-family: 'Circe';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  /* identical to box height, or 112% */
+
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+  /* identical to box height */
+
+  color: #000000;
   @media screen and (max-width: 767px) {
     border-radius: 10px;
     overflow: hidden;
@@ -111,8 +124,17 @@ export const Ultable = styled.ul`
 
 export const Litable = styled.li`
   display: flex;
+
+  text-align: right;
   :nth-child(5) {
     color: ${switchColor};
+
+    font-family: 'Circe';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
   }
 
   @media screen and (max-width: 767px) {
@@ -172,7 +194,6 @@ export const Litable = styled.li`
     }
   }
 `;
-
 
 export const BtnEdit = styled.button`
   border: none;
