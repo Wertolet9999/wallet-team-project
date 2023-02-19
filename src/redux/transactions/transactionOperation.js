@@ -21,7 +21,7 @@ export const addTransaction = createAsyncThunk(
   async (transaction, { rejectWithValue }) => {
     try {
       const { data } = await baseAPI.post('/transactions', transaction);
-      console.log('data :>> ', data);
+      // console.log('data :>> ', data);
       toast.success('💹 Transaction successful!', toastStyled);
       return data;
     } catch (error) {

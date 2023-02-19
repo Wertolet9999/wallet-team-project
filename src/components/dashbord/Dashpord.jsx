@@ -32,7 +32,7 @@ const Dashpord = ({
   const currentBalance = useSelector(selectBalance);
   const isMobile = useMedia('(max-width: 767px)');
   const isNoMobile = useMedia('(min-width: 768px)');
-
+  const isShown = transactions.length > 0 && categories.length > 0;
   const arrSortTrans = [...transactions].sort(
     (prevTr, nextTr) =>
       Date.parse(nextTr.transactionDate) - Date.parse(prevTr.transactionDate)
@@ -53,59 +53,88 @@ const Dashpord = ({
   const type = 'INCOME'; // to delet whent  will be work
 
   return (
-    <Box>
-      {!isMobile && (
-        <Ulheads>
-          <Liheads>Date</Liheads>
-          <Liheads>Type</Liheads>
-          <Liheads>Category</Liheads>
-          <Liheads>Comment</Liheads>
-          <Liheads>sum</Liheads>
-          <Liheads></Liheads>
-        </Ulheads>
-      )}
-      {arrSortTrans.map(
-        ({ id, transactionDate, type, categoryId, comment, amount }) => (
-          <Ultable key={id}>
-            <Litable type={type}>
-              {isMobile && <Span>Date</Span>}
-              {transactionDate}
-            </Litable>
-            <Litable type={type}>
-              {isMobile && <Span>Type</Span>}
-              {type === 'INCOME' ? '+' : '-'}
-            </Litable>
-            <Litable type={type}>
-              {isMobile && <Span>Category</Span>}
-              {categories.find(category => category.id === categoryId).name}
-            </Litable>
-            <Litable type={type}>
-              {isMobile && <Span>Comment</Span>}
-              {comment}
-            </Litable>
-            <Litable type={type}>
-              {isMobile && <Span>Category</Span>}
-              {amount}
-            </Litable>
-            <Litable type={type}>
-              {!isMobile && (
-                <BtnEdit>
-                  <MdEdit />
-                </BtnEdit>
-              )}
-              <BtnDel onClick={deleteData}>delete</BtnDel>
-              {isMobile && (
-                <BtnEdit>
-                  <MdEdit />
-                  Edit
-                </BtnEdit>
-              )}
-            </Litable>
-          </Ultable>
-        )
-      )}
-      <ButtonAddTransactions onClick={handleModalOpen} />
-    </Box>
+    isShown && (
+      <Box>
+        {!isMobile && (
+          <Ulheads>
+            <Liheads>Date</Liheads>
+            <Liheads>Type</Liheads>
+            <Liheads>Category</Liheads>
+            <Liheads>Comment</Liheads>
+            <Liheads>sum</Liheads>
+            <Liheads></Liheads>
+          </Ulheads>
+        )}
+        {arrSortTrans.map(
+          ({ id, transactionDate, type, categoryId, comment, amount }) => (
+            <Ultable key={id}>
+              <Litable type={type}>
+                {isMobile && <Span>Date</Span>}
+                {console.log(transactionDate)}
+                {transactionDate}
+              </Litable>
+              <Litable type={type}>
+                {isMobile && <Span>Type</Span>}
+                {type === 'INCOME' ? '+' : '-'}
+              </Litable>
+              <Litable type={type}>
+                {isMobile && <Span>Category</Span>}
+                {categories.find(category => category.id === categoryId).name}
+              </Litable>
+              <Litable type={type}>
+                {isMobile && <Span>Comment</Span>}
+                {comment}
+              </Litable>
+              <Litable type={type}>
+                {isMobile && <Span>Category</Span>}
+                {amount}
+              </Litable>
+              <Litable type={type}>
+                {!isMobile && (
+                  <BtnEdit
+                    aria-label="Edit"
+                    type="button"
+                    onClick={() =>
+                      openEditModal({
+                        id,
+                        transactionDate,
+                        type,
+                        categoryId,
+                        comment,
+                        amount,
+                      })
+                    }
+                  >
+                    <MdEdit />
+                  </BtnEdit>
+                )}
+                <BtnDel onClick={deleteData}>delete</BtnDel>
+                {isMobile && (
+                  <BtnEdit
+                    aria-label="Edit"
+                    type="button"
+                    onClick={() =>
+                      openEditModal({
+                        id,
+                        transactionDate,
+                        type,
+                        categoryId,
+                        comment,
+                        amount,
+                      })
+                    }
+                  >
+                    <MdEdit />
+                    Edit
+                  </BtnEdit>
+                )}
+              </Litable>
+            </Ultable>
+          )
+        )}
+        {/* <ButtonAddTransactions onClick={handleModalOpen} /> */}
+      </Box>
+    )
     // <Table>
     //   {!isMobile && (
     //     <thead>
