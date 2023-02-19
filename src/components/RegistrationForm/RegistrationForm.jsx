@@ -16,6 +16,7 @@ import {
 import { IoMdMail } from 'react-icons/io';
 import { MdLock } from 'react-icons/md';
 import { IoPersonSharp } from 'react-icons/io5';
+import { routes } from 'service/routes';
 
 export const RegistrationForm = () => {
   const dispatch = useDispatch();
@@ -151,7 +152,7 @@ export const RegistrationForm = () => {
             </FormButton>
           </Form>
 
-          <FormLink to="/login">Log in</FormLink>
+          <FormLink to={routes.LOGIN}>Log in</FormLink>
         </section>
       </Wrapper>
     </Container>

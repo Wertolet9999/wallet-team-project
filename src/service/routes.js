@@ -1,7 +1,7 @@
 export const routes = {
-  HOME: '/', //dashboardPage
+  HOME: '/', 
   REGISTER: '/register',
   LOGIN: '/login',
-  DIAGRAM: '/diagram', //SummeryPage
-  CURRENCY: '/currency', //
+  DIAGRAM: '/diagram', 
+  CURRENCY: '/currency', 
 };
