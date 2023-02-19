@@ -123,7 +123,7 @@ export const Tabel = ({ trSummary, setYear, setMonth, month, year }) => {
 
                 <TrSummaryWrap>
                   <TrSummaryField>
-                    <TrSummaryStr>Expanses: </TrSummaryStr>
+                    <TrSummaryStr>Expenses: </TrSummaryStr>
                     <TrSummaryNum red>
                       {Math.abs(trSummary.expenseSummary).toFixed(2)}
                     </TrSummaryNum>

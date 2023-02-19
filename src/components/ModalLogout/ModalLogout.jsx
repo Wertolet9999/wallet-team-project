@@ -25,7 +25,7 @@ export const LogoutForm = ({ closeModalFunc }) => {
       <Backdrop>
         <Container>
           <ModalAddTransactionTitle>
-            Are you sure want to exit?
+            Are you sure You want to exit?
           </ModalAddTransactionTitle>
           <ButtonWrapper>
             <Button
@@ -34,9 +34,9 @@ export const LogoutForm = ({ closeModalFunc }) => {
                 dispatch(logout());
               }}
             >
-              Yes, am sure
+              Yes, I am
             </Button>
-            <Button onClick={closeModalFunc}>No, I forgot something</Button>
+            <Button onClick={closeModalFunc}>No, not yet</Button>
           </ButtonWrapper>
         </Container>
       </Backdrop>

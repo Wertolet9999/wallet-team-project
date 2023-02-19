@@ -41,7 +41,7 @@ export const Patron = () => {
 
         <div className={s.ball}></div>
       </div>
-      <p className={s.text}>Patron is waiting for a choice</p>
+      <p className={s.text}>Patron is waiting for your action</p>
     </div>
   );
 };
