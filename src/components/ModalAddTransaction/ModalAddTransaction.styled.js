@@ -250,7 +250,7 @@ export const Button = styled.button`
   position: relative;
   padding: 13px;
   border-radius: 20px;
-  min-width: 300px;
+  min-width: 200px;
   font-size: 18px;
   font-weight: 400;
   line-height: calc(27 / 18);
