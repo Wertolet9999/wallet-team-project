@@ -41,12 +41,12 @@ const Dashpord = ({
   // console.log(transactions);
   // console.log(categories);
   const deleteData = (id, amount) => {
-    // if (currentBalance - amount < 0) {
-    //   toast.error(
-    //     'Sorry, balance can`t be negative. You should delete expense transactions to delete this income'
-    //   );
-    //   return;
-    // } //logict for negetive balans , need tu instal toas
+    if (currentBalance - amount < 0) {
+      toast.error(
+        'Sorry, balance can`t be negative. You should delete expense transactions to delete this income'
+      );
+      return;
+    }
     dispatch(deleteTransaction(id));
   };
 
@@ -108,7 +108,14 @@ const Dashpord = ({
                     <MdEdit />
                   </BtnEdit>
                 )}
-                <BtnDel onClick={deleteData}>delete</BtnDel>
+                <BtnDel
+                  aria-label="delete"
+                  type="button"
+                  onClick={() => deleteData(id, amount)}
+                  red
+                >
+                  delete
+                </BtnDel>
                 {isMobile && (
                   <BtnEdit
                     aria-label="Edit"
