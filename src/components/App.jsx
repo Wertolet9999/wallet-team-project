@@ -6,7 +6,12 @@ import { Layout } from 'Layout/Layout';
 import { lazy, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCurrentUser } from 'redux/auth/authOperations';
-import { selectToken } from 'redux/auth/authSelectors';
+import {
+  selectIsFetching,
+  selectIsLoadingUser,
+  selectToken,
+} from 'redux/auth/authSelectors';
+import { Loader } from './Loader/Loader';
 
 const DashboardPage = lazy(() =>
   import('../pages/DashboardPage/DashboardPage').then(module => ({
@@ -42,11 +47,16 @@ export const App = () => {
   const token = Boolean(useSelector(selectToken));
   const dispatch = useDispatch();
 
+  const isFetching = useSelector(selectIsFetching);
+  const isLoading = useSelector(selectIsLoadingUser);
+
   useEffect(() => {
     dispatch(fetchCurrentUser());
   }, [dispatch]);
 
-  return (
+  return isFetching || isLoading ? (
+    <Loader />
+  ) : (
     <Routes>
       {!token ? (
         <>

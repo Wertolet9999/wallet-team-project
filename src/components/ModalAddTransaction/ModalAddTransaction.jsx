@@ -34,8 +34,8 @@ import * as yup from 'yup';
 import { GrClose } from 'react-icons/gr';
 import { addTransaction } from 'redux/transactions/transactionOperation';
 import { selectBalance } from 'redux/transactions/transactionSelectors';
-import { toastStyled } from 'stylesheet/baseStyle';
 import { toast } from 'react-toastify';
+import { toastStyled } from 'stylesheet/baseStyle';
 
 export const ModalAddTransaction = ({ onClose }) => {
   const categories = useSelector(selectCategories);
@@ -100,11 +100,11 @@ export const ModalAddTransaction = ({ onClose }) => {
   };
 
   const selectOption = () =>
-    categories.reduce((acc, category) => {
-      if (category.type !== 'INCOME') {
+    categories.reduce((acc, categori) => {
+      if (categori.type !== 'INCOME') {
         acc.push({
-          value: `${category.id}`,
-          label: `${category.name}`,
+          value: `${categori.id}`,
+          label: `${categori.name}`,
         });
       }
       return acc;
