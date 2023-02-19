@@ -111,6 +111,7 @@ body {
     }
   }
 }
+
 .Toastify__toast-theme--colored.Toastify__toast--success {
   background-color: #24CCA7;
 }
