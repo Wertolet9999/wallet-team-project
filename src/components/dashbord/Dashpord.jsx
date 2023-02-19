@@ -27,9 +27,6 @@ const Dashpord = ({ transactions, categories, openEditModal }) => {
     (prevTr, nextTr) =>
       Date.parse(nextTr.transactionDate) - Date.parse(prevTr.transactionDate)
   );
-  // console.log(arrSortTrans);
-  // console.log(transactions);
-  // console.log(categories);
   const deleteData = (id, amount) => {
     if (currentBalance - amount < 0) {
       toast.error(
