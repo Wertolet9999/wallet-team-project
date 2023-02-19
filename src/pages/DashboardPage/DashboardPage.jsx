@@ -1,4 +1,3 @@
-import { selectIsAuth } from 'redux/auth/authSelectors';
 import { Balance } from 'components/Balance/Balance';
 import { ButtonAddTransactions } from 'components/ButtonAddTransactions/ButtonAddTransactions';
 import Dashpord from 'components/dashbord/Dashpord';

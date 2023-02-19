@@ -25,7 +25,7 @@ export const LogoutForm = ({ closeModalFunc }) => {
       <Backdrop>
         <Container>
           <ModalAddTransactionTitle>
-            Are you sure You want to exit?
+            Are you sure you want to exit?
           </ModalAddTransactionTitle>
           <ButtonWrapper>
             <Button
