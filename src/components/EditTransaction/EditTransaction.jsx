@@ -1,18 +1,3 @@
-// import { useDispatch, useSelector } from 'react-redux';
-// import { useFormik } from 'formik';
-// import { GrClose } from 'react-icons/gr';
-// import {
-//   CloseButton,
-//   ModalForm,
-//   ModalTitle,
-// } from 'components/ModalAddTransaction/ModalAddTransaction.styled';
-// import { updateTransaction } from 'redux/transactions/transactionOperation';
-// import { selectCategories } from 'redux/categories/categoriesSelectors';
-// import { Comment, Category, TransactionData } from './EditModal.styled';
-// import { Button } from 'components/Button/Button';
-// import { transformDate } from 'helpers/transformDate';
-// import { useMedia } from 'react-use';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { GrClose } from 'react-icons/gr';
 import {
