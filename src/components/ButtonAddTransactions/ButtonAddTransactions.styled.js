@@ -8,34 +8,29 @@ export const Icon = styled(AiOutlinePlus)`
 `;
 
 export const StyledBtn = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100%;
-  border: 2px solid #24cca7;
-  right: 40px;
-  bottom: 40px;
-  width: 44px;
-  height: 44px;
-  background: #24cca7;
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: #24cca7;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
 
-  @media (max-width: 1279px) {
-    position: sticky;
-    right: 20px;
+    position: fixed;
     bottom: 20px;
+    right: 20px;
+    box-shadow: 0px 6px 15px rgba(36, 204, 167, 0.5);
+    @media (min-width: 768px) {
 
-    /* position: absolute;
-    width: 44px;
-    height: 44px;
-    left: 684px;
-    top: 940px; */
-  }
-
-  @media (min-width: 1280px) {
-    position: absolute;
-    width: 44px;
-    height: 44px;
-    left: 1196px;
-    top: 636px;
-  }
+        margin-bottom: 40px;
+        right: 40px;
+    }
+    @media (min-width: 1280px) {
+        position: absolute;
+        top: 70vh;
+        right: 24px;
+    }
 `;
