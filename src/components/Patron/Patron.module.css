@@ -4,8 +4,8 @@
   font-weight: 500;
   font-size: 24px;
 
-  color: #326bcd;
-  text-shadow: 1px 1px 1px #236767;
+  color: #134191;
+  /* text-shadow: 1px 1px 1px #236767; */
 }
 @media screen and (min-width: 768px) {
   .text {
