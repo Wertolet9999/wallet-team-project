@@ -25,7 +25,7 @@ const HeaderNav = () => {
         )}
         <LogOutButton
           onClick={() => {
-            isMobile ? dispatch(logout()) : setIsOpenLogoutModal(true);
+            setIsOpenLogoutModal(true);
           }}
         >
           <IoLogOutOutline /> {!isMobile && 'Exit'}
