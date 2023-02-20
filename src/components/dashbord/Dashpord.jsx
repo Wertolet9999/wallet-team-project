@@ -55,7 +55,6 @@ const Dashpord = ({ transactions, categories, openEditModal }) => {
             <Ultable key={id}>
               <Litable type={type}>
                 {isMobile && <Span>Date</Span>}
-                {console.log(transactionDate)}
                 {transactionDate}
               </Litable>
               <Litable type={type}>

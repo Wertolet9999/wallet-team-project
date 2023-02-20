@@ -3,7 +3,7 @@ import { routes } from 'service/routes';
 import { Layout } from 'Layout/Layout';
 // import { PrivateRoute } from 'service/PrivatRoutes';
 // import { PublicRoute } from 'service/PublicRoutes';
-import { lazy, useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCurrentUser } from 'redux/auth/authOperations';
 import {
@@ -57,28 +57,34 @@ export const App = () => {
   return isFetching || isLoading ? (
     <Loader />
   ) : (
-    <Routes>
-      {!token ? (
-        <>
-          <Route path={routes.LOGIN} element={<LoginPage />} />
-          <Route path={routes.REGISTER} element={<RegisterPage />} />
-        </>
-      ) : (
-        <>
-          <Route path={routes.HOME} element={<Layout />}>
-            <Route index element={<DashboardPage />} />
-            <Route path={routes.DIAGRAM} element={<StatisticPage />} />
-            <Route path={routes.CURRENCY} element={<CurrencyPage />} />
-          </Route>
-        </>
-      )}
+    <Suspense fallback={<Loader />}>
+      <Routes>
+        {!token ? (
+          <>
+            <Route path={routes.LOGIN} element={<LoginPage />} />
+            <Route path={routes.REGISTER} element={<RegisterPage />} />
+          </>
+        ) : (
+          <>
+            <Route path={routes.HOME} element={<Layout />}>
+              <Route index element={<DashboardPage />} />
+              <Route path={routes.DIAGRAM} element={<StatisticPage />} />
+              <Route path={routes.CURRENCY} element={<CurrencyPage />} />
+            </Route>
+          </>
+        )}
 
-      <Route
-        path="*"
-        element={
-          token ? <Navigate to={routes.HOME} /> : <Navigate to={routes.LOGIN} />
-        }
-      />
-    </Routes>
+        <Route
+          path="*"
+          element={
+            token ? (
+              <Navigate to={routes.HOME} />
+            ) : (
+              <Navigate to={routes.LOGIN} />
+            )
+          }
+        />
+      </Routes>
+    </Suspense>
   );
 };

@@ -1,6 +1,36 @@
 import styled from 'styled-components';
 import { switchBg } from 'stylesheet/switchBg';
 
+export const Amount = styled.input`
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 190px;
+  height: 32px;
+  border: 0;
+  border-bottom: 1px solid #e0e0e0;
+  font-family: Circe, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+  &:active,
+  &:hover,
+  &:focus {
+    outline: 1px solid #e0e0e0;
+    border-radius: 6px;
+  }
+  &::placeholder {
+    text-align: center;
+  }
+  @media screen and (max-width: 767px) {
+    width: 280px;
+    text-align: center;
+    &::placeholder {
+      text-align: left;
+    }
+  } ;
+`;
+
 export const ButtonEdit = styled.button`
   position: relative;
   padding: 13px;
