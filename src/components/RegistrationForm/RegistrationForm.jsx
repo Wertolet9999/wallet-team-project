@@ -78,12 +78,6 @@ export const RegistrationForm = () => {
                 onChange={handleChange}
                 required
               />
-              {values.email.length > 0 && (
-                <div>
-                  <span></span>
-                  {errors.email && <p>{errors.email}</p>}
-                </div>
-              )}
             </Label>
 
             <Label
@@ -100,12 +94,6 @@ export const RegistrationForm = () => {
                 onChange={handleChange}
                 required
               />
-              {values.password.length > 0 && (
-                <div>
-                  <span></span>
-                  {errors.password && <p>{errors.password}</p>}
-                </div>
-              )}
             </Label>
 
             <Label
@@ -140,12 +128,6 @@ export const RegistrationForm = () => {
                 onChange={handleChange}
                 required
               />
-              {values.username.length > 0 && (
-                <div>
-                  <span></span>
-                  {errors.username && <p>{errors.username}</p>}
-                </div>
-              )}
             </Label>
             <FormButton primary type="submit">
               Register
