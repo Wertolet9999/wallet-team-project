@@ -87,7 +87,7 @@ export const Liheads = styled.li`
 
 export const Ultable = styled.ul`
   display: flex;
-  font-family: 'Circe';
+  font-family: Circe, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -129,7 +129,7 @@ export const Litable = styled.li`
   :nth-child(5) {
     color: ${switchColor};
 
-    font-family: 'Circe';
+    font-family: Circe, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -229,7 +229,7 @@ export const BtnDel = styled.button`
   width: 67px;
   height: 26px;
 
-  font-family: 'Circe';
+  font-family: Circe, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -247,4 +247,9 @@ export const Span = styled.span`
   font-weight: 700;
   font-size: 18px;
   line-height: 1.5;
+`;
+
+export const DivWrap = styled.div`
+  max-height: 500px;
+  overflow-y: scroll;
 `;
