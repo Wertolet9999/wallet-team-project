@@ -4,6 +4,7 @@ import { switchBg } from 'stylesheet/switchBg';
 export const Amount = styled.input`
   padding-left: 8px;
   padding-right: 8px;
+  margin-bottom: 20px;
   width: 190px;
   height: 32px;
   border: 0;
@@ -45,11 +46,6 @@ export const ButtonEdit = styled.button`
   background-color: #fff;
   transition: all 0.3s;
   z-index: 10;
-
-  &:nth-child(2) {
-    margin-top: 40px;
-    margin-bottom: 20px;
-  }
 
   &:hover {
     transform: scale(1.05);
@@ -122,4 +118,8 @@ export const Comment = styled.textarea`
   &:focus {
     outline-color: #6e78e8;
   }
+`;
+
+export const AmountDiv = styled.div`
+  text-align: center;
 `;

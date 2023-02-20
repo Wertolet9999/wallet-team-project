@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { GrClose } from 'react-icons/gr';
 import {
+  ButtonFlexDiv,
   // CloseButton,
   CloseButtonEd,
   ModalAddTransactionTitle,
@@ -12,6 +13,7 @@ import { useFormik } from 'formik';
 import { updateTransaction } from 'redux/transactions/transactionOperation';
 import {
   Amount,
+  AmountDiv,
   ButtonEdit,
   Category,
   Comment,
@@ -60,8 +62,8 @@ export const EditTransaction = ({ transaction, close }) => {
       <TransactionData>
         Date: {transformDate(transaction.transactionDate)}
       </TransactionData>
-
-      <div>
+      <AmountDiv>
+        Amount:
         <Amount
           type="text"
           placeholder="0.00"
@@ -70,7 +72,7 @@ export const EditTransaction = ({ transaction, close }) => {
           onChange={handleChange}
           required
         />
-      </div>
+      </AmountDiv>
       <ModalForm onSubmit={handleSubmit}>
         <Comment
           placeholder="Comment"
@@ -81,13 +83,14 @@ export const EditTransaction = ({ transaction, close }) => {
         >
           {values.comment}
         </Comment>
-
-        <ButtonEdit type="submit" primary>
-          EDIT
-        </ButtonEdit>
-        <ButtonEdit type="button" onClick={close}>
-          Cancel
-        </ButtonEdit>
+        <ButtonFlexDiv>
+          <ButtonEdit type="submit" primary>
+            EDIT
+          </ButtonEdit>
+          <ButtonEdit type="button" onClick={close}>
+            Cancel
+          </ButtonEdit>
+        </ButtonFlexDiv>
         {!isMobile && (
           <CloseButtonEd type="button" onClick={close} aria-label="close">
             <GrClose />
