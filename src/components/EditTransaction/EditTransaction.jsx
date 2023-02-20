@@ -39,7 +39,6 @@ export const EditTransaction = ({ transaction, close }) => {
       amount: transaction.amount,
     },
     onSubmit: values => {
-      console.log('values', values);
       dispatch(
         updateTransaction({
           ...transaction,

@@ -37,7 +37,6 @@ export const updateTransaction = createAsyncThunk(
     try {
       const { data } = await baseAPI.patch(`/transactions/${id}`, transaction);
       toast.success('💹 Comment was updated!', toastStyled);
-      console.log('data', data)
       return data;
     } catch (error) {
       toast.error('🆘 Something Went Wrong', toastStyled);
