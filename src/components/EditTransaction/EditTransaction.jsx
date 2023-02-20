@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { GrClose } from 'react-icons/gr';
 import {
-  CloseButton,
+  // CloseButton,
   CloseButtonEd,
   ModalAddTransactionTitle,
   ModalForm,
