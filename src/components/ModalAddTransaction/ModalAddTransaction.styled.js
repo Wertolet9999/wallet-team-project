@@ -357,7 +357,7 @@ import { AiOutlineMinus } from 'react-icons/ai';
 export const CloseButtonEd = styled.button`
   position: absolute;
   right: -60px;
-  top: -225px;
+  top: -235px;
   background-color: transparent;
   border: 0;
   font-size: 16px;
