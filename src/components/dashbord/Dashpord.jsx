@@ -11,6 +11,7 @@ import {
   Liheads,
   Ultable,
   Litable,
+  DivWrap,
 } from './Dashpord.styled';
 import { deleteTransaction } from 'redux/transactions/transactionOperation';
 
@@ -50,79 +51,81 @@ const Dashpord = ({ transactions, categories, openEditModal }) => {
             <Liheads></Liheads>
           </Ulheads>
         )}
-        {arrSortTrans.map(
-          ({ id, transactionDate, type, categoryId, comment, amount }) => (
-            <Ultable key={id}>
-              <Litable type={type}>
-                {isMobile && <Span>Date</Span>}
-                {transactionDate}
-              </Litable>
-              <Litable type={type}>
-                {isMobile && <Span>Type</Span>}
-                {type === 'INCOME' ? '+' : '-'}
-              </Litable>
-              <Litable type={type}>
-                {isMobile && <Span>Category</Span>}
-                {categories.find(category => category.id === categoryId).name}
-              </Litable>
-              <Litable type={type}>
-                {isMobile && <Span>Comment</Span>}
-                {comment}
-              </Litable>
-              <Litable type={type}>
-                {isMobile && <Span>Category</Span>}
-                {amount}
-              </Litable>
-              <Litable type={type}>
-                {!isMobile && (
-                  <BtnEdit
-                    aria-label="Edit"
+        <DivWrap>
+          {arrSortTrans.map(
+            ({ id, transactionDate, type, categoryId, comment, amount }) => (
+              <Ultable key={id}>
+                <Litable type={type}>
+                  {isMobile && <Span>Date</Span>}
+                  {transactionDate}
+                </Litable>
+                <Litable type={type}>
+                  {isMobile && <Span>Type</Span>}
+                  {type === 'INCOME' ? '+' : '-'}
+                </Litable>
+                <Litable type={type}>
+                  {isMobile && <Span>Category</Span>}
+                  {categories.find(category => category.id === categoryId).name}
+                </Litable>
+                <Litable type={type}>
+                  {isMobile && <Span>Comment</Span>}
+                  {comment}
+                </Litable>
+                <Litable type={type}>
+                  {isMobile && <Span>Category</Span>}
+                  {amount}
+                </Litable>
+                <Litable type={type}>
+                  {!isMobile && (
+                    <BtnEdit
+                      aria-label="Edit"
+                      type="button"
+                      onClick={() =>
+                        openEditModal({
+                          id,
+                          transactionDate,
+                          type,
+                          categoryId,
+                          comment,
+                          amount,
+                        })
+                      }
+                    >
+                      <MdEdit />
+                    </BtnEdit>
+                  )}
+                  <BtnDel
+                    aria-label="delete"
                     type="button"
-                    onClick={() =>
-                      openEditModal({
-                        id,
-                        transactionDate,
-                        type,
-                        categoryId,
-                        comment,
-                        amount,
-                      })
-                    }
+                    onClick={() => deleteData(id, amount)}
+                    red
                   >
-                    <MdEdit />
-                  </BtnEdit>
-                )}
-                <BtnDel
-                  aria-label="delete"
-                  type="button"
-                  onClick={() => deleteData(id, amount)}
-                  red
-                >
-                  delete
-                </BtnDel>
-                {isMobile && (
-                  <BtnEdit
-                    aria-label="Edit"
-                    type="button"
-                    onClick={() =>
-                      openEditModal({
-                        id,
-                        transactionDate,
-                        type,
-                        categoryId,
-                        comment,
-                        amount,
-                      })
-                    }
-                  >
-                    <MdEdit />
-                    Edit
-                  </BtnEdit>
-                )}
-              </Litable>
-            </Ultable>
-          )
-        )}
+                    delete
+                  </BtnDel>
+                  {isMobile && (
+                    <BtnEdit
+                      aria-label="Edit"
+                      type="button"
+                      onClick={() =>
+                        openEditModal({
+                          id,
+                          transactionDate,
+                          type,
+                          categoryId,
+                          comment,
+                          amount,
+                        })
+                      }
+                    >
+                      <MdEdit />
+                      Edit
+                    </BtnEdit>
+                  )}
+                </Litable>
+              </Ultable>
+            )
+          )}
+        </DivWrap>
       </Box>
     )
   );

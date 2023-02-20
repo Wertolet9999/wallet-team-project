@@ -32,13 +32,7 @@ export const Navigation = () => {
             </StyledNavLink>
           </li>
           <li>
-            <StyledNavLink
-              activeStyle={{
-                fontWeight: 'bold',
-                color: 'red',
-              }}
-              to={routes.DIAGRAM}
-            >
+            <StyledNavLink to={routes.DIAGRAM}>
               <MdTimeline />
               {!isMobile && 'Statistics'}
             </StyledNavLink>

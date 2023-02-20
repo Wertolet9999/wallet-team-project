@@ -21,8 +21,12 @@ export const addTransaction = createAsyncThunk(
   async (transaction, { rejectWithValue }) => {
     try {
       const { data } = await baseAPI.post('/transactions', transaction);
-      // console.log('data :>> ', data);
+
       toast.success('💹 Transaction successful!', toastStyled);
+      const newDate = data.transactionDate.split('T')[0];
+      console.log(newDate);
+      data.transactionDate = newDate;
+      // transactionDate: '2023-02-20T10:33:06.128Z';
       return data;
     } catch (error) {
       toast.error('🆘 Something Went Wrong', toastStyled);
