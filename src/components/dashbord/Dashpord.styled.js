@@ -13,6 +13,7 @@ const switchColor = ({ type }) => {
 
 export const Box = styled.div`
   position: relative;
+  
   @media screen and (max-width: 767px) {
     width: 280px;
     margin: 0 auto;

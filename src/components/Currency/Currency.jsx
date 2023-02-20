@@ -2,6 +2,7 @@ import {
   CurrencyList,
   HeaderList,
   HeaderTitle,
+  Loading,
   Table,
   Wrapper,
 } from './Currency.styled';
@@ -10,9 +11,10 @@ import { useEffect } from 'react';
 import { getCurrency } from 'redux/monoBank/monoBankOperations';
 import { selectCurrentCurrency } from 'redux/monoBank/monoBankSelectors';
 import { selectIsLoading } from 'redux/categories/categoriesSelectors';
-import { Loader } from 'components/Loader/Loader';
+import { Loader, LoaderMobile } from 'components/Loader/Loader';
 import { nanoid } from '@reduxjs/toolkit';
 import { CurrencyItem } from 'components/CurrencyItem/CurrencyItem';
+import { useMedia } from 'react-use';
 
 export const Currency = () => {
   const dispatch = useDispatch();
@@ -23,11 +25,13 @@ export const Currency = () => {
     dispatch(getCurrency());
   }, [dispatch]);
 
+  const isMobile = useMedia('(max-width: 767px)');
+
   return (
     <>
       <Wrapper>
         {isLoading ? (
-          <Loader />
+          <Loading>{isMobile ? <LoaderMobile /> : <Loader />}</Loading>
         ) : (
           <>
             <HeaderList>
