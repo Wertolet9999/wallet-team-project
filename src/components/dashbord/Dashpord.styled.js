@@ -13,6 +13,7 @@ const switchColor = ({ type }) => {
 
 export const Box = styled.div`
   position: relative;
+  
   @media screen and (max-width: 767px) {
     width: 280px;
     margin: 0 auto;
@@ -161,7 +162,7 @@ export const Litable = styled.li`
       width: 83px;
     }
     :nth-child(3) {
-      width: 139px;
+      width: 150px;
     }
     :nth-child(4) {
       width: 118px;
@@ -250,6 +251,9 @@ export const Span = styled.span`
 `;
 
 export const DivWrap = styled.div`
-  max-height: 500px;
+ @media screen and (min-width: 1280px) {
+     max-height: 400px;
   overflow-y: scroll;
+  }
+
 `;

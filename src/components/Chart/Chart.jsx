@@ -1,6 +1,7 @@
 import { Chart as ChartJS, ArcElement, Tooltip } from 'chart.js';
-import { Loader } from 'components/Loader/Loader';
+import { Loader, LoaderMobile } from 'components/Loader/Loader';
 import { Doughnut } from 'react-chartjs-2';
+import { useMedia } from 'react-use';
 import { switchBg } from 'stylesheet/switchBg';
 import { BalanceText, Loading } from './Chart.styled';
 
@@ -69,12 +70,12 @@ export const Chart = ({ trSummary, isLoading, balance }) => {
     }
   };
 
+  const isMobile = useMedia('(max-width: 767px)');
+
   return (
     <>
       {isLoading ? (
-        <Loading>
-          <Loader />
-        </Loading>
+        <Loading>{isMobile ? <LoaderMobile /> : <Loader />}</Loading>
       ) : (
         <>
           <Doughnut redraw={redrawValue()} options={options} data={data} />

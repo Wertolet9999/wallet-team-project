@@ -63,12 +63,6 @@ export const LoginForm = () => {
                 onChange={handleChange}
                 required
               />
-              {values.email.length > 0 && (
-                <div>
-                  <span></span>
-                  {errors.email && <p>{errors.email}</p>}
-                </div>
-              )}
             </Label>
 
             <Label
@@ -85,12 +79,6 @@ export const LoginForm = () => {
                 onChange={handleChange}
                 required
               />
-              {values.password.length > 0 && (
-                <div>
-                  <span></span>
-                  {errors.password && <p>{errors.password}</p>}
-                </div>
-              )}
             </Label>
             <FormButton type="submit">Log in</FormButton>
           </Form>

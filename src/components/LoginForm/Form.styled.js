@@ -168,12 +168,7 @@ export const Label = styled.label`
     left: 12.5px;
     width: 24px;
     height: 24px;
-    fill: ${p => {
-      if (p.value.length > 0) {
-        return !p.error ? '#24CCA7' : '#ff6596';
-      }
-      return '#e0e0e0';
-    }};
+    fill: #24cca7;
   }
   div {
     position: absolute;
