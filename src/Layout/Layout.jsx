@@ -7,12 +7,12 @@ import { Header } from 'components/Header/Header';
 import { Suspense } from 'react';
 import { Loader } from 'components/Loader/Loader';
 import { useSelector } from 'react-redux';
-import { selectToken } from 'redux/auth/authSelectors';
+import { selectIsToken } from 'redux/auth/authSelectors';
 import { ErrorMessage } from 'formik';
 
 export const Layout = () => {
   const isMobile = useMedia('(max-width: 767px)');
-  const token = Boolean(useSelector(selectToken));
+  const token = Boolean(useSelector(selectIsToken));
 
   return (
     <>

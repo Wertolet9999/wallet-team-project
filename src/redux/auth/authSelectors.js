@@ -1,4 +1,4 @@
-export const selectToken = state => state.auth.token;
+export const selectIsToken = state => Boolean(state.auth.token);
 export const selectName = state => state.auth.user.username;
 export const selectEmail = state => state.auth.user.email;
 export const selectIsAuth = state => state.auth.isAuth;
