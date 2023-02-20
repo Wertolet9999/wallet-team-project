@@ -11,6 +11,7 @@ import { useMedia } from 'react-use';
 import { useFormik } from 'formik';
 import { updateTransaction } from 'redux/transactions/transactionOperation';
 import {
+  Amount,
   ButtonEdit,
   Category,
   Comment,
@@ -33,9 +34,17 @@ export const EditTransaction = ({ transaction, close }) => {
   const { handleSubmit, values, handleChange } = useFormik({
     initialValues: {
       comment: transaction.comment,
+      amount: transaction.amount,
     },
     onSubmit: values => {
-      dispatch(updateTransaction({ ...transaction, ...values }));
+      console.log('values', values);
+      dispatch(
+        updateTransaction({
+          ...transaction,
+          ...values,
+          amount: Number(values.amount),
+        })
+      );
       close();
     },
   });
@@ -51,9 +60,17 @@ export const EditTransaction = ({ transaction, close }) => {
       <TransactionData>
         Date: {transformDate(transaction.transactionDate)}
       </TransactionData>
-      <TransactionData>
-        Sum: {Math.abs(transaction.amount).toFixed(2)}
-      </TransactionData>
+
+      <div>
+        <Amount
+          type="text"
+          placeholder="0.00"
+          name="amount"
+          value={values.amount}
+          onChange={handleChange}
+          required
+        />
+      </div>
       <ModalForm onSubmit={handleSubmit}>
         <Comment
           placeholder="Comment"
@@ -66,7 +83,7 @@ export const EditTransaction = ({ transaction, close }) => {
         </Comment>
 
         <ButtonEdit type="submit" primary>
-          UPDATE
+          EDIT
         </ButtonEdit>
         <ButtonEdit type="button" onClick={close}>
           Cancel
