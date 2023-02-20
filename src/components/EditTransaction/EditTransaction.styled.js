@@ -4,6 +4,7 @@ import { switchBg } from 'stylesheet/switchBg';
 export const Amount = styled.input`
   padding-left: 8px;
   padding-right: 8px;
+  margin-left: 10px;
   margin-bottom: 20px;
   width: 190px;
   height: 32px;

@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 export const HeaderTag = styled.header`
- background-color: white;
-    width: 100%;
-    // z-index: 2;
-  }
+  background-color: white;
+  width: 100%;
+  // z-index: 2;
 `;
 
 export const HeaderDiv = styled.div`
