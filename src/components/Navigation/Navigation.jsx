@@ -5,11 +5,11 @@ import { IoMdHome } from 'react-icons/io';
 import { MdTimeline } from 'react-icons/md';
 import { FaDollarSign } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
-import { selectToken } from 'redux/auth/authSelectors';
+import { selectIsToken } from 'redux/auth/authSelectors';
 
 export const Navigation = () => {
   const isMobile = useMedia('(max-width: 767px)');
-  const token = Boolean(useSelector(selectToken));
+  const token = Boolean(useSelector(selectIsToken));
 
   return (
     <StyledUl>

@@ -9,9 +9,11 @@ import { fetchCurrentUser } from 'redux/auth/authOperations';
 import {
   selectIsFetching,
   selectIsLoadingUser,
-  selectToken,
+  selectIsToken,
 } from 'redux/auth/authSelectors';
 import { Loader } from './Loader/Loader';
+import { PublicRoute } from 'service/PublicRoutes';
+import { PrivateRoute } from 'service/PrivatRoutes';
 
 const DashboardPage = lazy(() =>
   import('../pages/DashboardPage/DashboardPage').then(module => ({
@@ -44,7 +46,7 @@ const LoginPage = lazy(() =>
 );
 
 export const App = () => {
-  const token = Boolean(useSelector(selectToken));
+  const token = Boolean(useSelector(selectIsToken));
   const dispatch = useDispatch();
 
   const isFetching = useSelector(selectIsFetching);
@@ -59,31 +61,23 @@ export const App = () => {
   ) : (
     <Suspense fallback={<Loader />}>
       <Routes>
-        {!token ? (
-          <>
-            <Route path={routes.LOGIN} element={<LoginPage />} />
-            <Route path={routes.REGISTER} element={<RegisterPage />} />
-          </>
-        ) : (
-          <>
-            <Route path={routes.HOME} element={<Layout />}>
-              <Route index element={<DashboardPage />} />
-              <Route path={routes.DIAGRAM} element={<StatisticPage />} />
-              <Route path={routes.CURRENCY} element={<CurrencyPage />} />
-            </Route>
-          </>
-        )}
-
         <Route
-          path="*"
-          element={
-            token ? (
-              <Navigate to={routes.HOME} />
-            ) : (
-              <Navigate to={routes.LOGIN} />
-            )
-          }
+          path={routes.LOGIN}
+          element={<PublicRoute component={<LoginPage />} />}
         />
+        <Route
+          path={routes.REGISTER}
+          element={<PublicRoute component={<RegisterPage />} />}
+        />
+        <Route
+          path={routes.HOME}
+          element={<PrivateRoute component={<Layout />} />}
+        >
+          <Route index element={<DashboardPage />} />
+          <Route path={routes.DIAGRAM} element={<StatisticPage />} />
+          <Route path={routes.CURRENCY} element={<CurrencyPage />} />
+          <Route path="*" element={<Navigate to={routes.HOME} />} />
+        </Route>
       </Routes>
     </Suspense>
   );
