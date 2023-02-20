@@ -2,15 +2,13 @@ import React from 'react';
 import { IoLogOutOutline } from 'react-icons/io5';
 import { useMedia } from 'react-use';
 import { List, LogOutButton, SpanDead } from './HeaderNav.styled';
-import { logout } from 'redux/auth/authOperations';
 import { useState } from 'react';
 import { LogoutForm } from 'components/ModalLogout/ModalLogout';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectName } from 'redux/auth/authSelectors';
 
 const HeaderNav = () => {
   const isMobile = useMedia('(max-width: 767px)');
-  const dispatch = useDispatch();
   const [isOpenLogoutModal, setIsOpenLogoutModal] = useState(false);
   const name = useSelector(selectName);
 

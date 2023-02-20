@@ -1,15 +1,12 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { routes } from 'service/routes';
 import { Layout } from 'Layout/Layout';
-// import { PrivateRoute } from 'service/PrivatRoutes';
-// import { PublicRoute } from 'service/PublicRoutes';
 import { lazy, Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCurrentUser } from 'redux/auth/authOperations';
 import {
   selectIsFetching,
   selectIsLoadingUser,
-  selectIsToken,
 } from 'redux/auth/authSelectors';
 import { Loader } from './Loader/Loader';
 import { PublicRoute } from 'service/PublicRoutes';
@@ -46,7 +43,6 @@ const LoginPage = lazy(() =>
 );
 
 export const App = () => {
-  const token = Boolean(useSelector(selectIsToken));
   const dispatch = useDispatch();
 
   const isFetching = useSelector(selectIsFetching);
